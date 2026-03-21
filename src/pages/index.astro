@@ -11,6 +11,14 @@ import ProcessSection from '../components/ProcessSection.astro';
 import FAQSection from '../components/FAQSection.astro';
 import CTASection from '../components/CTASection.astro';
 import { SITE, CTAS } from '../config/site';
+
+const homepageFaqs = [
+  { q: 'What makes your websites different from template-based designs?', a: 'We build for conversion first. Every page is structured for lead capture, trust signals, and local SEO. No generic layouts—we align design with your niche, audience, and business outcomes.' },
+  { q: 'Do you work with businesses outside New Jersey?', a: 'We focus on NJ service businesses because we understand the local market, GBP dynamics, and regional search behavior. If you are in NJ and serious about growth, we are the right fit.' },
+  { q: 'What is included in the free audit?', a: 'We review your site for conversion gaps, technical SEO issues, speed, mobile experience, and local visibility. You get a clear, actionable report—no obligation.' },
+  { q: 'How long does a typical website project take?', a: 'Starter redesigns: 3–4 weeks. Growth projects: 5–8 weeks. Premium builds: 8–12 weeks. Timeline depends on scope, content readiness, and revision cycles.' },
+  { q: 'Do you offer ongoing support?', a: 'Yes. Our Care Plans cover security, updates, backups, and minor edits. SEO clients get ongoing optimization, content updates, and performance tracking.' },
+];
 ---
 
 <BaseLayout
@@ -20,21 +28,34 @@ import { SITE, CTAS } from '../config/site';
   ogImage="/og-image.jpg"
 >
   <Hero
-    kicker="NJ-Based � Premium Local Specialist"
+    kicker="NJ-Based — Premium Local Specialist"
     headline="Lead-Focused Web Design & Local SEO for New Jersey Service Businesses"
-    subheadline={SITE.tagline}
+    subheadline="We build websites that earn their keep. Audit-first, conversion-engineered, and built for local visibility. If you are serious about calls and growth, start here."
     primaryCta={CTAS.primary}
     secondaryCta={CTAS.secondary}
   />
   <TrustStrip />
+
+  <section class="section-padding bg-white">
+    <div class="content-width">
+      <div class="max-w-3xl">
+        <h2 class="heading-lg mb-6">Built for NJ Service Businesses That Need Real Results</h2>
+        <p class="text-stone-600 text-lg mb-6">Most agencies deliver a site and walk away. We treat your website as a growth asset. That means understanding who is searching, what they need before they call, and how to turn traffic into qualified inquiries. Our clients are dentists, med spas, law firms, and other trust-heavy local businesses—people who cannot afford a pretty site that does not perform.</p>
+        <p class="text-stone-600 text-lg mb-0">Whether you need a new website, a redesign, or monthly SEO to capture more local search traffic, we start with an audit. No obligation. You get a concrete action plan before any commitment.</p>
+      </div>
+    </div>
+  </section>
+
   <ServicesSection />
+
   <WhyMostFail />
   <ResultsPreview />
+
   <section class="section-padding bg-stone-50">
     <div class="content-width">
       <div class="max-w-3xl mx-auto">
         <ProofBlock
-          quote="Most web designers deliver a site and walk away. NJ Web Studio treats your website as a growth asset. They think about who's searching, what happens when someone lands on a page, and how to turn traffic into calls. That's the difference."
+          quote="Most web designers deliver a site and walk away. NJ Web Studio treats your website as a growth asset. They think about who is searching, what happens when someone lands on a page, and how to turn traffic into calls. That is the difference."
           attribution="Practice owner"
           role="Dental practice, Central NJ"
           variant="highlight"
@@ -42,8 +63,25 @@ import { SITE, CTAS } from '../config/site';
       </div>
     </div>
   </section>
+
   <IndustriesSection />
   <ProcessSection />
-  <FAQSection />
+  <FAQSection faqs={homepageFaqs} />
+
+  <section class="section-padding bg-white">
+    <div class="content-width text-center">
+      <h2 class="heading-lg mb-4">Ready to See Where You Stand?</h2>
+      <p class="text-stone-600 text-lg max-w-2xl mx-auto mb-8">Get a free audit. We review your site, identify the biggest gaps, and tell you exactly what to fix first. No pressure. No obligation. Just clear next steps.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact#audit" class="inline-flex justify-center items-center px-6 py-3.5 rounded-lg font-semibold text-white bg-[#c9a227] hover:bg-[#d4af37] transition-colors">
+          {CTAS.primary}
+        </a>
+        <a href="/contact#call" class="inline-flex justify-center items-center px-6 py-3.5 rounded-lg font-semibold text-[#1e3a5f] border-2 border-[#1e3a5f] hover:bg-[#1e3a5f] hover:text-white transition-colors">
+          {CTAS.secondary}
+        </a>
+      </div>
+    </div>
+  </section>
+
   <CTASection />
 </BaseLayout>

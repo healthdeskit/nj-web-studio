@@ -8,15 +8,16 @@ interface Props {
   secondaryCta?: string;
   variant?: 'home' | 'page';
   kicker?: string;
+  heroImage?: string;
 }
 
-const { headline, subheadline, primaryCta = CTAS.primary, secondaryCta = CTAS.secondary, variant = 'home', kicker } = Astro.props;
+const { headline, subheadline, primaryCta = CTAS.primary, secondaryCta = CTAS.secondary, variant = 'home', kicker, heroImage = '/hero-fullwidth.webp' } = Astro.props;
 ---
 
-<section class={`relative overflow-hidden flex items-center ${variant === 'home' ? 'min-h-[85vh] md:min-h-[90vh]' : 'min-h-[50vh] md:min-h-[55vh] py-16 md:py-24'}`}>
+<section class={`relative overflow-hidden flex items-center ${variant === 'home' ? 'min-h-[85vh] md:min-h-[90vh]' : 'min-h-[45vh] md:min-h-[52vh] py-16 md:py-24'}`}>
   <div class="absolute inset-0">
     <img
-      src="/hero-fullwidth.webp"
+      src={heroImage}
       alt=""
       class="absolute inset-0 w-full h-full object-cover"
       fetchpriority={variant === 'home' ? 'high' : undefined}
@@ -25,7 +26,7 @@ const { headline, subheadline, primaryCta = CTAS.primary, secondaryCta = CTAS.se
       width="1920"
       height="1080"
     />
-    <div class="absolute inset-0 bg-gradient-to-r from-stone-900/92 via-stone-900/75 to-stone-900/50" aria-hidden="true" />
+    <div class={`absolute inset-0 ${variant === 'home' ? 'bg-gradient-to-r from-stone-900/92 via-stone-900/75 to-stone-900/50' : 'bg-gradient-to-r from-stone-900/88 via-stone-900/65 to-stone-900/45'}`} aria-hidden="true" />
     <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(30,58,95,0.5)_0%,transparent_55%)]" aria-hidden="true" />
   </div>
 
@@ -34,11 +35,11 @@ const { headline, subheadline, primaryCta = CTAS.primary, secondaryCta = CTAS.se
       {kicker && (
         <p class="text-xs font-semibold uppercase tracking-wider mb-4 text-[#c9a227]">{kicker}</p>
       )}
-      <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] mb-6 text-white" style="font-family: 'DM Serif Display', Georgia, serif;">
+      <h1 class={`font-bold tracking-tight leading-[1.1] mb-6 text-white ${variant === 'home' ? 'text-4xl md:text-5xl lg:text-6xl xl:text-7xl' : 'text-3xl md:text-4xl lg:text-5xl'}`} style="font-family: 'DM Serif Display', Georgia, serif;">
         {headline}
       </h1>
       {subheadline && (
-        <p class="text-lg md:text-xl mb-8 leading-relaxed max-w-2xl text-stone-200">
+        <p class={`mb-8 leading-relaxed max-w-2xl text-stone-200 ${variant === 'home' ? 'text-lg md:text-xl' : 'text-base md:text-lg'}`}>
           {subheadline}
         </p>
       )}

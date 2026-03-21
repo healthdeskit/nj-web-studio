@@ -64,11 +64,23 @@ npm run preview
 
 ## Form Handling
 
-The contact/audit form currently submits via GET to `/thank-you` for demo purposes. For production:
+The audit form supports production lead capture via **Formspree**:
 
-- **Formspree:** `action="https://formspree.io/f/YOUR_ID" method="POST"`
-- **Netlify Forms:** Add `data-netlify="true"` to the form (if deploying to Netlify)
-- **Render:** Use a serverless function or external form service
+1. Create a form at [formspree.io](https://formspree.io) (free tier).
+2. Copy your form ID (e.g. `xrgzwqab`).
+3. Set `PUBLIC_FORMSPREE_ID=xrgzwqab` in `.env` or in your hosting environment.
+4. Form will POST to Formspree and redirect to `/thank-you` on success.
+
+Without `PUBLIC_FORMSPREE_ID`, the form falls back to GET `/thank-you` (demo mode).
+
+## Launch Checklist
+
+Before going live:
+
+1. **Contact details:** Set `PUBLIC_PHONE`, `PUBLIC_EMAIL` in `.env` or hosting env.
+2. **Form capture:** Set `PUBLIC_FORMSPREE_ID` (see Form Handling above).
+3. **Domain:** Update `site` in `astro.config.mjs` and `SITE.url` in `src/config/site.ts` if needed.
+4. **Verify:** Run `npm run build` and `npm run preview` to test.
 
 ## Project Structure
 

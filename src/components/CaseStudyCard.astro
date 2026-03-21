@@ -1,0 +1,27 @@
+---
+interface Props {
+  industry: string;
+  challenge: string;
+  approach: string;
+  outcome: string;
+  attribution?: string;
+  status?: 'live' | 'coming-soon';
+}
+
+const { industry, challenge, approach, outcome, attribution, status = 'live' } = Astro.props;
+---
+
+<article class="card-elevated p-8 h-full flex flex-col">
+  <span class="text-xs font-semibold uppercase tracking-wide text-[#1e3a5f] mb-3">{industry}</span>
+  <h3 class="heading-sm mb-4">{challenge}</h3>
+  <p class="text-stone-600 text-sm mb-4"><strong>Approach:</strong> {approach}</p>
+  <p class="text-stone-600 text-sm mb-4"><strong>Outcome:</strong> {outcome}</p>
+  {attribution && (
+    <footer class="mt-auto pt-4 border-t border-stone-200">
+      <cite class="text-sm font-medium text-stone-700 not-italic">— {attribution}</cite>
+    </footer>
+  )}
+  {status === 'coming-soon' && (
+    <span class="mt-auto pt-4 text-xs text-stone-500">Case study in progress</span>
+  )}
+</article>

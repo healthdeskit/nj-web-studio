@@ -2,8 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import CaseStudyCard from '../components/CaseStudyCard.astro';
 import FAQSection from '../components/FAQSection.astro';
 import CTASection from '../components/CTASection.astro';
+
+const caseStudies = [
+  { industry: 'Dental practice', challenge: 'Low conversion despite traffic', approach: 'Full audit, trust architecture, appointment-focused CTAs.', outcome: 'Clearer positioning, stronger conversion path.', attribution: 'Practice owner, Central NJ', status: 'live' as const },
+  { industry: 'Med spa', challenge: 'Weak local visibility', approach: 'GBP optimization, location pages, treatment architecture.', outcome: 'Improved map-pack presence, booking intent aligned.', attribution: 'Owner, North NJ', status: 'live' as const },
+  { industry: 'Law firm', challenge: 'Generic site, low consultation requests', approach: 'Practice-area structure, authority blocks, consultation CTA flow.', outcome: 'Higher-quality leads, clearer intake path.', status: 'coming-soon' as const },
+];
 
 const faqs = [
   { q: 'Do you publish made-up performance numbers?', a: 'No. We do not fabricate metrics. If hard performance data is limited, we show proof of thinking, architecture quality, and implementation decisions that directly affect conversion and SEO outcomes.' },
@@ -51,6 +58,13 @@ const faqs = [
 
   <section class="section-padding bg-stone-50">
     <div class="content-width">
+      <h2 class="heading-lg mb-8">Proof of Work</h2>
+      <p class="text-stone-600 text-lg mb-10 max-w-2xl">We focus on strategic proof—what we changed, why it matters, and how it affects outcomes. As projects mature, we add fuller case studies.</p>
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        {caseStudies.map((cs) => (
+          <CaseStudyCard {...cs} />
+        ))}
+      </div>
       <h2 class="heading-lg mb-6">How We Measure Progress</h2>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="card-premium p-6">

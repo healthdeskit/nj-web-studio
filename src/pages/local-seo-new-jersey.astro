@@ -7,10 +7,17 @@ import FAQSection from '../components/FAQSection.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 
 const faqs = [
-  { q: 'How long before local SEO starts generating results?', a: 'Most businesses see early movement in 60-90 days, with stronger compounding gains across 4-8 months. Timeline depends on competition, site quality, and consistency of execution.' },
+  { q: 'How long before local SEO starts generating results?', a: 'Most businesses see early movement in 60–90 days, with stronger compounding gains across 4–8 months. Timeline depends on competition, site quality, and consistency of execution.' },
   { q: 'Do I need SEO if I already have referrals?', a: 'Yes. Referrals are great, but search captures buyers who do not know your name yet. Local SEO stabilizes lead flow and reduces over-reliance on word-of-mouth only.' },
   { q: 'What makes local SEO different for service businesses?', a: 'You need location-intent page structure, GBP alignment, review strategy, and trust-focused conversion pages. Generic blog-first SEO usually underperforms for local service intent.' },
   { q: 'Can you optimize our existing website?', a: 'Yes. We can optimize your current website, but if structure is fundamentally weak, we will recommend redesign-first to avoid wasting monthly SEO spend.' },
+];
+
+const processSteps = [
+  { step: 1, title: 'Technical audit', desc: 'Schema, site structure, crawlability, and speed.' },
+  { step: 2, title: 'Content & intent', desc: 'Service pages, location pages, and search-intent alignment.' },
+  { step: 3, title: 'GBP alignment', desc: 'Profile optimization and consistency with website.' },
+  { step: 4, title: 'Ongoing execution', desc: 'Monthly updates, tracking, and refinement.' },
 ];
 ---
 
@@ -35,55 +42,78 @@ const faqs = [
 
   <section class="section-padding bg-white">
     <div class="content-width">
-      <div class="grid lg:grid-cols-2 gap-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <h2 class="heading-md mb-6">Local SEO Is Not Just Google Business Profile</h2>
+          <p class="text-stone-600 text-lg mb-6">GBP optimization matters—but it is one piece. Full local SEO connects your website, your GBP, your citations, and your content into a system. When prospects search for your services in your area, you need to rank, and the pages they land on need to convert. We build both.</p>
+          <p class="text-stone-600 text-lg">That means technical cleanup, location-intent page structure, schema, and conversion-focused design. You are not buying vanity metrics—you are investing in predictable local visibility that supports real pipeline growth.</p>
+        </div>
+        <div class="bg-stone-50 rounded-2xl p-8 border border-stone-200">
+          <h3 class="font-semibold text-stone-900 mb-6">Our Local SEO Process</h3>
+          <div class="space-y-4">
+            {processSteps.map((p) => (
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-[#1e3a5f] text-white flex items-center justify-center text-sm font-semibold">{p.step}</span>
+                <div>
+                  <span class="font-semibold text-stone-900">{p.title}</span>
+                  <p class="text-stone-600 text-sm">{p.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10 mb-16">
         <div class="card-premium p-8">
           <h2 class="heading-md mb-5">What Local SEO Solves</h2>
-          <ul class="space-y-3 text-stone-600">
-            <li>� You are not visible in map pack searches</li>
-            <li>� Competitors outrank you for core services</li>
-            <li>� GBP profile is incomplete or unmanaged</li>
-            <li>� Site gets traffic but weak lead conversion</li>
-            <li>� No clear internal linking or location intent structure</li>
+          <ul class="space-y-3 text-stone-600 list-disc list-inside">
+            <li>You are not visible in map pack searches</li>
+            <li>Competitors outrank you for core services</li>
+            <li>GBP profile is incomplete or unmanaged</li>
+            <li>Site gets traffic but weak lead conversion</li>
+            <li>No clear internal linking or location intent structure</li>
           </ul>
         </div>
         <div class="card-premium p-8">
           <h2 class="heading-md mb-5">How We Execute</h2>
-          <p class="text-stone-600 mb-4">We combine technical SEO, content architecture, GBP optimization, and conversion UX. This keeps rankings and lead quality moving together.</p>
-          <p class="text-stone-600">You are not buying vanity metrics. You are investing in predictable local visibility that supports real pipeline growth.</p>
+          <p class="text-stone-600 mb-4">We combine technical SEO, content architecture, GBP optimization, and conversion UX. Rankings and lead quality move together—we do not chase traffic that does not convert.</p>
+          <p class="text-stone-600">You get monthly reporting, clear priorities, and a plan that scales as your visibility grows.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section-padding bg-stone-50">
-    <div class="content-width">
+      <div class="mb-16 card-proof p-8">
+        <h2 class="heading-md mb-4">Local SEO vs. GBP-Only: Why Full SEO Matters</h2>
+        <p class="text-stone-600 mb-4">Google Business Profile optimization is essential—but it is only one lever. Your website must support local intent with proper location pages, service structure, and schema. If your GBP ranks but your site does not reinforce the same signals, or if your landing pages do not convert, you are leaving money on the table.</p>
+        <p class="text-stone-600">Full local SEO ties everything together: technical health, content architecture, GBP alignment, and conversion-focused pages. We do not chase rankings in isolation—we build a system that turns visibility into calls.</p>
+      </div>
+
       <h2 class="heading-lg mb-8">Monthly SEO Packages</h2>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="card-elevated p-8">
           <h3 class="text-lg font-semibold text-stone-900 mb-2">Local SEO Essentials</h3>
           <p class="text-[#1e3a5f] font-bold mb-4">$900/month</p>
-          <p class="text-stone-600 text-sm mb-4">Technical cleanup, baseline content, GBP foundation, and monthly progress tracking.</p>
+          <p class="text-stone-600 text-sm mb-4">Technical cleanup, baseline content, GBP foundation, and monthly progress tracking. Best for established sites that need a solid baseline.</p>
           <a href="/contact#audit" class="btn-secondary text-sm py-2.5 mt-2 inline-block">Get Started</a>
         </div>
         <div class="card-elevated p-8 border-2 border-[#1e3a5f]">
           <span class="text-xs font-semibold text-[#1e3a5f] uppercase tracking-wide">Popular</span>
           <h3 class="text-lg font-semibold text-stone-900 mb-2 mt-2">Local SEO Growth</h3>
-          <p class="text-[#1e3a5f] font-bold mb-4">$1,350 � $1,750/month</p>
-          <p class="text-stone-600 text-sm mb-4">Deeper content strategy, citation quality, GBP momentum, and conversion improvements.</p>
+          <p class="text-[#1e3a5f] font-bold mb-4">$1,350 – $1,750/month</p>
+          <p class="text-stone-600 text-sm mb-4">Deeper content strategy, citation quality, GBP momentum, and conversion improvements. For businesses ready to invest in sustained visibility growth.</p>
           <a href="/contact#audit" class="btn-primary text-sm py-2.5 mt-2 inline-block">Get Started</a>
         </div>
         <div class="card-elevated p-8">
           <h3 class="text-lg font-semibold text-stone-900 mb-2">Local SEO Authority</h3>
-          <p class="text-[#1e3a5f] font-bold mb-4">$2,200 � $3,000/month</p>
-          <p class="text-stone-600 text-sm mb-4">Competitive niche strategy with stronger authority building and high-intent page expansion.</p>
+          <p class="text-[#1e3a5f] font-bold mb-4">$2,200 – $3,000/month</p>
+          <p class="text-stone-600 text-sm mb-4">Competitive niche strategy with stronger authority building and high-intent page expansion. For established businesses in crowded markets.</p>
           <a href="/contact#audit" class="btn-secondary text-sm py-2.5 mt-2 inline-block">Get Started</a>
         </div>
       </div>
 
       <div class="mt-14 card-proof">
         <h3 class="heading-sm mb-3">Google Business Profile Is Part of SEO, Not Separate</h3>
-        <p class="text-stone-600">Your GBP listing, website service pages, and local trust signals should reinforce each other. We build that system so ranking improvements translate into real calls.</p>
-        <a href="/google-business-profile-optimization-nj" class="inline-flex mt-4 font-semibold text-[#1e3a5f] hover:underline">See GBP optimization services ?</a>
+        <p class="text-stone-600 mb-4">Your GBP listing, website service pages, and local trust signals should reinforce each other. We build that system so ranking improvements translate into real calls. Need GBP-only help? <a href="/google-business-profile-optimization-nj" class="font-semibold text-[#1e3a5f] hover:underline">See our GBP optimization services</a>.</p>
       </div>
     </div>
   </section>

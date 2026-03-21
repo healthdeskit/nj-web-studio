@@ -1,3 +1,4 @@
+// Before launch: Set real phone, email. For form: create form at formspree.io and set PUBLIC_FORMSPREE_ID
 export const SITE = {
   name: 'NJ Web Studio',
   domain: 'njwebstudio.net',
@@ -5,10 +6,11 @@ export const SITE = {
   tagline: 'Lead-Focused Web Design & Local SEO for New Jersey Service Businesses',
   supportingMessage: 'Not just a website. A lead-focused growth system.',
   description: 'We build websites that help NJ service businesses get more calls, more trust, and better local visibility.',
-  phone: '(973) 555-0123',
-  email: 'hello@njwebstudio.net',
+  phone: import.meta.env.PUBLIC_PHONE || '(973) 555-0123',
+  email: import.meta.env.PUBLIC_EMAIL || 'hello@njwebstudio.net',
+  formspreeId: import.meta.env.PUBLIC_FORMSPREE_ID || '',
   location: {
-    address: 'New Jersey',
+    address: import.meta.env.PUBLIC_ADDRESS || 'New Jersey',
     region: 'NJ',
   },
 } as const;
