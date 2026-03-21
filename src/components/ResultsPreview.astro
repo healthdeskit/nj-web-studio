@@ -1,50 +1,83 @@
 ---
-const proofItems = [
+const transformations = [
   {
-    title: 'Stronger homepage positioning',
-    desc: 'Replace vague messaging with clearer buyer-facing language that improves first-impression trust.'
+    industry: 'Dental Practice',
+    before: 'Site had decent traffic but a low appointment inquiry rate. Provider credentials were buried mid-page. The only CTA was a phone number in the footer.',
+    approach: 'Rebuilt homepage trust flow. Moved provider profiles above the fold. Simplified appointment CTA to one visible button tied to the most requested service.',
+    after: 'Clearer first impression. Appointment path obvious on first view. Site now feels consistent with the quality of care the practice delivers.',
   },
   {
-    title: 'Better service-page architecture',
-    desc: 'Move from short brochure pages to pages that handle objections, clarify value, and support action.'
+    industry: 'Med Spa',
+    before: 'Premium service quality was not reflected online. Treatment pages were thin, no consultation intent structure, and GBP information was misaligned with the website.',
+    approach: 'Full layout redesign with premium visual framing. Treatment pages expanded with outcome copy and consultation CTAs on each. GBP and site messaging aligned.',
+    after: 'Site quality matches service quality. Treatment pages handle common objections before the call. Booking path integrated and visible throughout.',
   },
   {
-    title: 'Improved CTA flow',
-    desc: 'Make the next step more obvious, more relevant, and easier to take across the site.'
+    industry: 'Law Firm',
+    before: 'Generic homepage with no practice-area differentiation. Attorney credibility was absent. Consultation path was buried. Visitors had no obvious reason to choose this firm.',
+    approach: 'Practice-area architecture rebuilt with intent-specific landing pages. Attorney credibility section added above the fold. Consultation CTA prominent on every key page.',
+    after: 'Clear authority positioning. High-intent visitors find the right practice area faster. Contact path obvious. Firm feels established from the first second.',
+  },
+];
+
+const pillars = [
+  {
+    title: 'Offer clarity built into every page',
+    desc: 'Buyers understand the value and fit within seconds, before they are even ready to contact.',
   },
   {
-    title: 'Cleaner SEO foundation',
-    desc: 'Support better crawlability, internal linking, schema usage, and local intent alignment from launch.'
+    title: 'Trust earlier in the page flow',
+    desc: 'Proof, process, and credibility appear before the ask, reducing hesitation when intent is highest.',
+  },
+  {
+    title: 'Obvious next steps throughout',
+    desc: 'Every page has a clear, low-friction next step matched to where the visitor is in their decision.',
+  },
+  {
+    title: 'Local visibility built in from launch',
+    desc: 'Technical SEO, schema, and GBP alignment from day one, not patched in six months later.',
   },
 ];
 ---
 
-<section class="section-padding bg-white">
+<section class="section-padding bg-stone-50">
   <div class="content-width">
-    <div class="grid lg:grid-cols-[.95fr_1.05fr] gap-12 items-center mb-14">
-      <div>
-        <h2 class="heading-lg mb-5">What We Mean by "Results"</h2>
-        <p class="text-stone-600 text-lg mb-6">
-          We do not use fake screenshots, inflated ranking claims, or invented conversion numbers. When formal case studies are limited, we focus on proof that still matters: better structure, sharper positioning, cleaner internal logic, stronger conversion paths, and a site that looks and feels more credible to the right buyer.
-        </p>
-        <p class="text-stone-600 text-lg">
-          In other words, the work should look more intentional, read more clearly, and make the business feel stronger before anyone ever gets on a call.
-        </p>
-      </div>
 
-      <img
-        src="/images/results-preview.webp"
-        alt="Structured website improvement preview showing messaging, SEO, and conversion upgrades"
-        class="w-full rounded-2xl border border-stone-200 shadow-md object-cover aspect-[3/2]"
-        width="900"
-        height="600"
-        loading="lazy"
-        decoding="async"
-      />
+    <div class="max-w-3xl mb-14">
+      <p class="text-xs font-semibold uppercase tracking-wider text-[#1e3a5f] mb-3">Transformation examples</p>
+      <h2 class="heading-lg mb-5">What Changes After the Work</h2>
+      <p class="text-stone-600 text-lg mb-4">
+        We do not publish fabricated metrics or invented ranking screenshots. What we can show is the pattern: what was broken, what was changed, and what it produced commercially. Below are representative examples based on the types of projects we focus on.
+      </p>
+      <p class="text-stone-600 text-lg">
+        Real outcomes depend on starting conditions, market competition, and execution quality. These examples reflect honest, structural change, not magic numbers.
+      </p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {proofItems.map((item) => (
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      {transformations.map((t) => (
+        <article class="card-elevated overflow-hidden flex flex-col">
+          <div class="px-6 pt-5 pb-4 border-b border-stone-100">
+            <span class="text-xs font-bold uppercase tracking-[0.12em] text-[#1e3a5f]">{t.industry}</span>
+          </div>
+          <div class="px-6 py-4 bg-red-50/60 border-b border-stone-100">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-red-600 mb-2">Before</p>
+            <p class="text-stone-600 text-sm leading-relaxed">{t.before}</p>
+          </div>
+          <div class="px-6 py-4 bg-stone-50 border-b border-stone-100">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-stone-400 mb-2">Approach</p>
+            <p class="text-stone-600 text-sm leading-relaxed">{t.approach}</p>
+          </div>
+          <div class="px-6 py-5 bg-emerald-50/60">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-emerald-700 mb-2">After</p>
+            <p class="text-stone-600 text-sm leading-relaxed">{t.after}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      {pillars.map((item) => (
         <div class="card-premium p-6">
           <h3 class="font-semibold text-stone-900 mb-2">{item.title}</h3>
           <p class="text-stone-600 text-sm">{item.desc}</p>
@@ -52,8 +85,9 @@ const proofItems = [
       ))}
     </div>
 
-    <div class="text-center mt-12">
-      <a href="/results" class="btn-secondary">See Results & Approach</a>
+    <div class="text-center">
+      <a href="/results" class="btn-secondary">See Our Full Approach &amp; Results</a>
     </div>
+
   </div>
 </section>
