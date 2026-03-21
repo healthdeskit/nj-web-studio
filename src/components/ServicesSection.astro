@@ -2,51 +2,74 @@
 const services = [
   {
     title: 'Website Design & Redesign',
-    description: 'New builds and full redesigns. We start with positioning and conversion flow, then design. Every page answers: Why should they contact you? What proof do they need first? Where is the CTA?',
+    description:
+      'For businesses that need a stronger first impression, clearer service architecture, and a website that turns more visitors into qualified inquiries.',
+    bullets: [
+      'Homepage and service-page strategy',
+      'Conversion-focused structure and trust sections',
+      'Mobile-first build with SEO foundations'
+    ],
     href: '/web-design-new-jersey',
-    cta: 'Explore web design',
-    differentiator: 'For businesses that need a site that earns its keep.',
+    cta: 'Explore Web Design',
   },
   {
     title: 'Local SEO + Google Business',
-    description: 'Monthly SEO that connects your website, GBP, and location content. We fix visibility first, then optimize for conversion. Not blog-only SEO—we focus on service-intent and map-pack results.',
+    description:
+      'For businesses that want more local visibility without wasting traffic on weak landing pages or disconnected SEO work.',
+    bullets: [
+      'Technical cleanup and local intent alignment',
+      'GBP and website signal reinforcement',
+      'Content and conversion improvements that work together'
+    ],
     href: '/local-seo-new-jersey',
-    cta: 'Explore local SEO',
-    differentiator: 'For businesses losing leads to competitors who rank higher.',
+    cta: 'Explore Local SEO',
   },
   {
     title: 'Website Care Plans',
-    description: 'Security, updates, backups, and minor edits. Protects your investment and keeps the site from drifting. Essential if your site drives pipeline.',
+    description:
+      'For businesses that want the site to stay updated, protected, and usable after launch instead of slowly falling out of date.',
+    bullets: [
+      'Updates, backups, monitoring, and edits',
+      'Ongoing polish and issue prevention',
+      'A cleaner retention path after launch'
+    ],
     href: '/website-maintenance-care-plans',
-    cta: 'Explore care plans',
-    differentiator: 'For businesses that cannot afford downtime or slow decay.',
+    cta: 'Explore Care Plans',
   },
 ];
 ---
 
 <section class="section-padding bg-white">
   <div class="content-width">
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <h2 class="heading-lg mb-4">Three Ways We Help NJ Businesses Grow</h2>
-      <p class="text-stone-600 text-lg">Each offer solves a different problem. Most clients start with an audit to see which combination fits.</p>
+    <div class="max-w-3xl mb-14">
+      <h2 class="heading-lg mb-5">Three Core Offers. One Commercial Goal.</h2>
+      <p class="text-stone-600 text-lg">
+        The site is intentionally focused around three offers because most local businesses do not need a bloated agency menu. They need a better website, stronger local visibility, and a practical path to maintain momentum after launch. Each offer exists to solve a different stage of that problem.
+      </p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
       {services.map((s) => (
         <article class="card-premium p-8 flex flex-col">
           <h3 class="text-xl font-semibold text-stone-900 mb-3">{s.title}</h3>
-          <p class="text-stone-600 mb-4 flex-1">{s.description}</p>
-          <p class="text-sm text-stone-500 mb-4 italic">{s.differentiator}</p>
-          <a href={s.href} class="font-semibold text-[#1e3a5f] hover:underline inline-flex items-center gap-1">
-            {s.cta}
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-          </a>
+          <p class="text-stone-600 mb-5">{s.description}</p>
+
+          <ul class="space-y-2 text-sm text-stone-600 mb-6">
+            {s.bullets.map((bullet) => (
+              <li>• {bullet}</li>
+            ))}
+          </ul>
+
+          <div class="mt-auto pt-2">
+            <a href={s.href} class="font-semibold text-[#1e3a5f] hover:underline inline-flex items-center gap-1">
+              {s.cta}
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
         </article>
       ))}
-    </div>
-
-    <div class="mt-12 text-center">
-      <a href="/contact#audit" class="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-[#1e3a5f] border-2 border-[#1e3a5f] hover:bg-[#1e3a5f] hover:text-white transition-colors">Not sure where to start? Get a free audit</a>
     </div>
   </div>
 </section>

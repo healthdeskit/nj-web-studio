@@ -5,7 +5,6 @@ import TrustStrip from '../components/TrustStrip.astro';
 import ServicesSection from '../components/ServicesSection.astro';
 import WhyMostFail from '../components/WhyMostFail.astro';
 import ResultsPreview from '../components/ResultsPreview.astro';
-import ProofBlock from '../components/ProofBlock.astro';
 import IndustriesSection from '../components/IndustriesSection.astro';
 import ProcessSection from '../components/ProcessSection.astro';
 import FAQSection from '../components/FAQSection.astro';
@@ -13,35 +12,75 @@ import CTASection from '../components/CTASection.astro';
 import { SITE, CTAS } from '../config/site';
 
 const homepageFaqs = [
-  { q: 'What makes your websites different from template-based designs?', a: 'We build for conversion first. Every page is structured for lead capture, trust signals, and local SEO. No generic layouts—we align design with your niche, audience, and business outcomes.' },
-  { q: 'Do you work with businesses outside New Jersey?', a: 'We focus on NJ service businesses because we understand the local market, GBP dynamics, and regional search behavior. If you are in NJ and serious about growth, we are the right fit.' },
-  { q: 'What is included in the free audit?', a: 'We review your site for conversion gaps, technical SEO issues, speed, mobile experience, and local visibility. You get a clear, actionable report—no obligation.' },
-  { q: 'How long does a typical website project take?', a: 'Starter redesigns: 3–4 weeks. Growth projects: 5–8 weeks. Premium builds: 8–12 weeks. Timeline depends on scope, content readiness, and revision cycles.' },
-  { q: 'Do you offer ongoing support?', a: 'Yes. Our Care Plans cover security, updates, backups, and minor edits. SEO clients get ongoing optimization, content updates, and performance tracking.' },
+  {
+    q: 'What makes NJ Web Studio different from a typical web designer?',
+    a: 'Most web designers focus on how a site looks. We focus on what it needs to do before someone is ready to call. That means offer clarity, trust architecture, page flow, conversion paths, and local visibility are built into the project from the start.'
+  },
+  {
+    q: 'Do you only work with New Jersey businesses?',
+    a: 'Our positioning is built around New Jersey service businesses because local search, trust, and regional buying behavior matter. We are especially focused on dentists, med spas, and law firms where credibility and conversion quality have a direct effect on growth.'
+  },
+  {
+    q: 'What is included in the free audit?',
+    a: 'We review your current website, messaging, CTA flow, mobile experience, service-page structure, and local SEO signals. The goal is to show you where leads are being lost and what to fix first.'
+  },
+  {
+    q: 'Can you help if we already have a website?',
+    a: 'Yes. Many projects start with an underperforming website. If the current structure is weak, we recommend redesign. If the foundation is usable, we can improve conversion flow, page quality, local SEO, or maintenance without rebuilding everything.'
+  },
+  {
+    q: 'What happens after I submit the audit form?',
+    a: 'You get a practical review, not a generic sales reply. We look at your current situation, identify the biggest issues, and outline the best next step. If there is a fit, we can then scope the right engagement.'
+  },
 ];
 ---
 
 <BaseLayout
   title={SITE.name}
-  description={SITE.description}
+  description="Lead-focused web design and local SEO for New Jersey service businesses. We help dentists, med spas, law firms, and other trust-heavy local brands get more calls, more trust, and better visibility."
   canonical="/"
   ogImage="/og-image.jpg"
 >
   <Hero
-    kicker="NJ-Based — Premium Local Specialist"
+    kicker="NJ-Based — Built for Serious Local Growth"
     headline="Lead-Focused Web Design & Local SEO for New Jersey Service Businesses"
-    subheadline="We build websites that earn their keep. Audit-first, conversion-engineered, and built for local visibility. If you are serious about calls and growth, start here."
+    subheadline="Not just a website. A growth system built to improve trust, strengthen first impressions, and turn more of your traffic into qualified calls."
     primaryCta={CTAS.primary}
     secondaryCta={CTAS.secondary}
   />
+
   <TrustStrip />
 
   <section class="section-padding bg-white">
     <div class="content-width">
-      <div class="max-w-3xl">
-        <h2 class="heading-lg mb-6">Built for NJ Service Businesses That Need Real Results</h2>
-        <p class="text-stone-600 text-lg mb-6">Most agencies deliver a site and walk away. We treat your website as a growth asset. That means understanding who is searching, what they need before they call, and how to turn traffic into qualified inquiries. Our clients are dentists, med spas, law firms, and other trust-heavy local businesses—people who cannot afford a pretty site that does not perform.</p>
-        <p class="text-stone-600 text-lg mb-0">Whether you need a new website, a redesign, or monthly SEO to capture more local search traffic, we start with an audit. No obligation. You get a concrete action plan before any commitment.</p>
+      <div class="grid lg:grid-cols-[1.15fr_.85fr] gap-12 items-start">
+        <div>
+          <h2 class="heading-lg mb-6">Most Local Business Websites Look Acceptable — But Still Underperform</h2>
+          <p class="text-stone-600 text-lg mb-6">
+            A lot of small-business websites are not failing because the owner does not care. They are failing because the site was built without a real commercial plan. The homepage sounds generic. Service pages do not match how buyers think. Trust shows up too late. Calls-to-action are weak or buried. Local SEO is treated like an afterthought. The result is a site that may "exist" online but does not consistently help the business grow.
+          </p>
+          <p class="text-stone-600 text-lg mb-6">
+            NJ Web Studio is built around fixing that exact problem. We do not start with random design ideas. We start with intent. Who is searching? What do they need to understand before they trust you? What needs to appear on the page before they are ready to call? What makes your business feel stronger than the alternatives already in the market? Design, structure, and SEO are then built around those answers.
+          </p>
+          <p class="text-stone-600 text-lg">
+            This is especially important for businesses where trust is part of the sale. Dentists need provider credibility and treatment clarity. Med spas need premium perception and strong booking flow. Law firms need authority, seriousness, and consultation confidence. When the website gets those details wrong, even decent traffic can turn into weak or low-quality leads.
+          </p>
+        </div>
+
+        <div class="card-elevated p-8">
+          <p class="text-xs font-semibold uppercase tracking-wider text-[#1e3a5f] mb-3">What this site is built to do</p>
+          <h3 class="heading-sm mb-4">A clearer path from traffic to inquiry</h3>
+          <ul class="space-y-3 text-stone-600">
+            <li>• Improve first-impression trust in the first few seconds</li>
+            <li>• Make services easier to understand and compare</li>
+            <li>• Give visitors a more obvious reason to contact you</li>
+            <li>• Support local search visibility with stronger page structure</li>
+            <li>• Filter out weak-fit buyers and attract more serious inquiries</li>
+          </ul>
+          <div class="mt-6 pt-6 border-t border-stone-200">
+            <a href="/contact#audit" class="btn-primary w-full">Get a Free Website & SEO Audit</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -49,36 +88,100 @@ const homepageFaqs = [
   <ServicesSection />
 
   <WhyMostFail />
-  <ResultsPreview />
 
-  <section class="section-padding bg-stone-50">
+  <section class="section-padding bg-white">
     <div class="content-width">
-      <div class="max-w-3xl mx-auto">
-        <ProofBlock
-          quote="Most web designers deliver a site and walk away. NJ Web Studio treats your website as a growth asset. They think about who is searching, what happens when someone lands on a page, and how to turn traffic into calls. That is the difference."
-          attribution="Practice owner"
-          role="Dental practice, Central NJ"
-          variant="highlight"
-        />
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="heading-lg mb-6">What Better Positioning Changes</h2>
+          <p class="text-stone-600 text-lg mb-6">
+            A stronger website does more than look cleaner. It changes how people interpret your business. When the page structure is sharper, the offer is clearer, and the trust signals show up earlier, the business feels more established. That matters because many local buyers compare quickly. They may visit two or three providers, agencies, or service companies in one sitting. The website that feels more credible usually earns the next step.
+          </p>
+          <p class="text-stone-600 text-lg mb-6">
+            Better positioning also improves lead quality. If your page explains who you help, what kind of project you are right for, and what the process looks like, it becomes easier for serious buyers to self-identify. At the same time, it reduces noise from people who are shopping only on price or who are not ready to invest in a better result.
+          </p>
+          <p class="text-stone-600 text-lg">
+            This is why we do not separate design, messaging, and local SEO into disconnected tasks. The businesses that grow online usually have all three working together: a stronger first impression, a better page journey, and better visibility when local prospects search.
+          </p>
+        </div>
+
+        <div class="grid gap-6">
+          <div class="card-proof">
+            <h3 class="heading-sm mb-3">Before</h3>
+            <p class="text-stone-600">
+              Generic headlines, short service pages, weak trust sections, buried contact paths, and inconsistent local search signals.
+            </p>
+          </div>
+          <div class="card-proof">
+            <h3 class="heading-sm mb-3">After</h3>
+            <p class="text-stone-600">
+              Clearer offer positioning, stronger service architecture, better CTA flow, more persuasive trust framing, and a site that supports both visibility and conversion.
+            </p>
+          </div>
+          <div class="card-proof">
+            <h3 class="heading-sm mb-3">Why it matters</h3>
+            <p class="text-stone-600">
+              More of the right people understand your value faster, trust you sooner, and take action with less hesitation.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <ResultsPreview />
+
   <IndustriesSection />
+
   <ProcessSection />
+
+  <section class="section-padding bg-stone-50">
+    <div class="content-width">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="heading-lg mb-4">Who This Is Best For</h2>
+        <p class="text-stone-600 text-lg">
+          We are not trying to be everything to everyone. NJ Web Studio is a better fit for service businesses that understand the value of trust, positioning, and conversion quality.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card-premium p-8">
+          <h3 class="heading-sm mb-4">Good fit</h3>
+          <ul class="space-y-3 text-stone-600">
+            <li>• You need a site that supports better leads, not just prettier visuals</li>
+            <li>• Your business depends on local trust and strong first impressions</li>
+            <li>• You already know a weak website can cost real opportunities</li>
+            <li>• You want clear structure, sharper messaging, and better local visibility</li>
+          </ul>
+        </div>
+
+        <div class="card-premium p-8">
+          <h3 class="heading-sm mb-4">Probably not the right fit</h3>
+          <ul class="space-y-3 text-stone-600">
+            <li>• You only want the cheapest possible site</li>
+            <li>• You do not care about trust, positioning, or lead quality</li>
+            <li>• You want a rushed build with no strategy, audit, or page planning</li>
+            <li>• You expect rankings or conversions without improving the website itself</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <FAQSection faqs={homepageFaqs} />
 
   <section class="section-padding bg-white">
-    <div class="content-width text-center">
-      <h2 class="heading-lg mb-4">Ready to See Where You Stand?</h2>
-      <p class="text-stone-600 text-lg max-w-2xl mx-auto mb-8">Get a free audit. We review your site, identify the biggest gaps, and tell you exactly what to fix first. No pressure. No obligation. Just clear next steps.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact#audit" class="inline-flex justify-center items-center px-6 py-3.5 rounded-lg font-semibold text-white bg-[#c9a227] hover:bg-[#d4af37] transition-colors">
-          {CTAS.primary}
-        </a>
-        <a href="/contact#call" class="inline-flex justify-center items-center px-6 py-3.5 rounded-lg font-semibold text-[#1e3a5f] border-2 border-[#1e3a5f] hover:bg-[#1e3a5f] hover:text-white transition-colors">
-          {CTAS.secondary}
-        </a>
+    <div class="content-width">
+      <div class="cta-band bg-[#1e3a5f] text-white px-8 md:px-12 text-center">
+        <p class="text-sm uppercase tracking-[0.18em] text-white/70 font-semibold mb-4">Free audit first</p>
+        <h2 class="heading-lg text-white mb-5">See What Is Hurting Trust, Visibility, and Lead Flow</h2>
+        <p class="text-stone-200 text-lg max-w-2xl mx-auto mb-8">
+          Start with a practical review of your website and local visibility. We will show you where the biggest problems are, what should be fixed first, and whether redesign, SEO, or a smaller improvement path makes the most sense.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact#audit" class="btn-accent">Get a Free Website & SEO Audit</a>
+          <a href="/contact#call" class="btn-secondary border-white text-white hover:bg-white hover:text-stone-900">Book a 15-Minute Call</a>
+        </div>
       </div>
     </div>
   </section>

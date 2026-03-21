@@ -1,19 +1,31 @@
 ---
 const items = [
-  { label: 'Audit-first approach', desc: 'Every engagement starts with a real site review, not assumptions.' },
-  { label: 'NJ service focus', desc: 'Dentists, med spas, law firms—we know the conversion patterns.' },
-  { label: 'Conversion architecture', desc: 'Pages built to capture intent, not just display content.' },
-  { label: 'Technical SEO included', desc: 'Schema, speed, and structure from day one.' },
+  {
+    title: 'Audit-first approach',
+    desc: 'We start by identifying what is weakening trust, visibility, and conversion before recommending the fix.'
+  },
+  {
+    title: 'Built for local service businesses',
+    desc: 'The structure is designed around how serious local buyers compare providers and decide who to contact.'
+  },
+  {
+    title: 'Positioning + UX + SEO together',
+    desc: 'Design is not isolated from messaging or search intent. Each part supports the next.'
+  },
+  {
+    title: 'Focused on trust-heavy niches',
+    desc: 'Dentists, med spas, law firms, and similar businesses need stronger trust architecture than generic templates provide.'
+  },
 ];
 ---
 
 <section class="py-8 md:py-10 bg-white border-y border-stone-200">
   <div class="content-width">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
       {items.map((item) => (
-        <div class="flex flex-col items-center text-center">
-          <span class="font-semibold text-stone-900">{item.label}</span>
-          <span class="text-sm text-stone-500 mt-0.5">{item.desc}</span>
+        <div class="card-premium p-5 text-left">
+          <h3 class="font-semibold text-stone-900 mb-2">{item.title}</h3>
+          <p class="text-sm text-stone-600">{item.desc}</p>
         </div>
       ))}
     </div>

@@ -1,20 +1,20 @@
 ---
 const reasons = [
   {
-    title: 'Built for looks, not leads',
-    desc: 'Sites that look polished but fail to guide visitors to contact. No clear hierarchy of trust, proof, or next step. Visitors browse and leave—competitors with simpler but clearer sites win the call.',
+    title: 'The homepage sounds like everyone else',
+    desc: 'When the message is broad, visitors do not immediately understand why this business is the better choice. That weakens trust before the sales process even begins.',
   },
   {
-    title: 'Weak local SEO foundation',
-    desc: 'Missing schema, inconsistent NAP, thin location pages, or GBP not aligned with the site. Prospects search locally—if you are invisible in map pack or service searches, you lose before they ever land.',
+    title: 'Service pages explain but do not persuade',
+    desc: 'Many pages list services without handling real objections, clarifying outcomes, or guiding people toward the next step.',
   },
   {
-    title: 'No clear next step',
-    desc: 'Buried contact forms, vague CTAs, or multiple competing actions. When intent is high but the path is unclear, friction kills conversions. Every page should answer: what do I do now?',
+    title: 'Trust appears too late',
+    desc: 'Buyers often need reassurance before they are willing to call. If proof, credibility, process, or fit guidance are missing, hesitation rises fast.',
   },
   {
-    title: 'Outdated and neglected',
-    desc: 'Stale content, slow load times, security gaps, broken forms. Trust erodes quickly. A neglected site signals a neglected business—and it hurts rankings over time.',
+    title: 'SEO and conversion are treated as separate jobs',
+    desc: 'A page can rank and still fail. If the landing experience is weak, the business pays for traffic without getting the full benefit.',
   },
 ];
 ---
@@ -23,28 +23,49 @@ const reasons = [
   <div class="content-width">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
       <div>
-        <h2 class="heading-lg mb-6">Why Most Local Business Websites Don't Convert</h2>
-        <p class="text-stone-600 text-lg mb-8">We audit NJ service business sites regularly. The same patterns recur: design without conversion logic, SEO without local intent, and no clear path to inquiry. These are fixable—but they require structural change, not cosmetic tweaks.</p>
+        <h2 class="heading-lg mb-6">Why Most Local Business Websites Still Leak Leads</h2>
+        <p class="text-stone-600 text-lg mb-8">
+          The problem is usually not one dramatic mistake. It is a stack of smaller issues that make the business feel weaker than it actually is. A generic hero, short service pages, weak proof, buried CTAs, and no clear sense of who the offer is really for. Together, those issues create friction at exactly the moment a buyer is deciding whether to trust you.
+        </p>
+
         <ul class="space-y-6">
           {reasons.map((r) => (
             <li class="flex gap-4">
               <span class="flex-shrink-0 w-10 h-10 rounded-full bg-[#1e3a5f]/10 flex items-center justify-center text-[#1e3a5f]" aria-hidden="true">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
               </span>
               <div>
-                <h3 class="font-semibold text-stone-900">{r.title}</h3>
+                <h3 class="font-semibold text-stone-900 mb-1">{r.title}</h3>
                 <p class="text-stone-600">{r.desc}</p>
               </div>
             </li>
           ))}
         </ul>
       </div>
+
       <div class="space-y-6">
-        <img src="/images/why-most-fail.webp" alt="Professional reviewing website audit and conversion gaps" class="w-full rounded-xl border border-stone-200 shadow-md object-cover aspect-[4/3] max-h-[280px]" width="500" height="375" loading="lazy" decoding="async" />
-        <div class="bg-white rounded-xl p-8 card-elevated">
-          <p class="text-lg font-semibold text-stone-900 mb-2">See exactly where your site falls short</p>
-          <p class="text-stone-600 mb-6">We review structure, conversion flow, technical SEO, and local visibility. You get a concrete list of what is broken and what to fix first—no obligation.</p>
-          <a href="/contact#audit" class="inline-flex items-center justify-center w-full px-6 py-3.5 rounded-lg font-semibold text-white bg-[#1e3a5f] hover:bg-[#2d4a6f]">Get a Free Website & SEO Audit</a>
+        <img
+          src="/images/why-most-fail.webp"
+          alt="Website audit view showing trust, CTA, and page-structure gaps"
+          class="w-full rounded-xl border border-stone-200 shadow-md object-cover aspect-[4/3] max-h-[320px]"
+          width="640"
+          height="480"
+          loading="lazy"
+          decoding="async"
+        />
+
+        <div class="card-elevated p-8">
+          <h3 class="heading-sm mb-4">What a stronger site does differently</h3>
+          <ul class="space-y-3 text-stone-600">
+            <li>• Clarifies the offer faster</li>
+            <li>• Builds trust before asking for contact</li>
+            <li>• Makes service pages easier to compare and act on</li>
+            <li>• Aligns local search visibility with landing-page quality</li>
+          </ul>
+
+          <a href="/contact#audit" class="btn-primary mt-6 w-full">Get a Free Website & SEO Audit</a>
         </div>
       </div>
     </div>
