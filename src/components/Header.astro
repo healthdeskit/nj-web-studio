@@ -1,29 +1,72 @@
 ---
-import { SITE, NAV_LINKS, CTAS } from '../config/site';
+import { SITE, CTAS } from '../config/site';
+
+const serviceLinks = [
+  { href: '/web-design-new-jersey', label: 'Web Design' },
+  { href: '/website-redesign-new-jersey', label: 'Website Redesign' },
+  { href: '/local-seo-new-jersey', label: 'Local SEO' },
+  { href: '/google-business-profile-optimization-nj', label: 'Google Business Profile' },
+  { href: '/website-maintenance-care-plans', label: 'Care Plans' },
+];
+
+const topLinks = [
+  { href: '/results', label: 'Results' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
 ---
 
-<header class="sticky top-0 z-50 bg-white/98 backdrop-blur-md border-b border-stone-200/80 shadow-sm">
+<header class="sticky top-0 z-50 bg-white/98 backdrop-blur-md border-b border-stone-100 shadow-[0_1px_0_rgba(0,0,0,.04)]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-18 md:h-20 gap-6">
+    <div class="flex items-center justify-between h-[4.5rem] gap-6">
+
+      <!-- Logo -->
       <a href="/" class="shrink-0 flex items-center" aria-label="NJ Web Studio - Home">
-        <img src="/logo.svg" alt="" class="h-9 md:h-10 w-auto" width="180" height="44" />
+        <img src="/logo.svg" alt="NJ Web Studio" class="h-9 w-auto" width="190" height="44" />
       </a>
 
+      <!-- Desktop nav -->
       <nav class="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
-        {NAV_LINKS.map((link) => (
-          <a
-            href={link.href}
-            class="px-4 py-2.5 rounded-lg text-sm font-medium text-stone-600 hover:text-[#1e3a5f] hover:bg-stone-100/80 transition-colors"
+
+        <!-- Services dropdown -->
+        <div class="relative group">
+          <button
+            type="button"
+            class="nav-link flex items-center gap-1.5 cursor-pointer bg-transparent border-none outline-none"
+            aria-haspopup="true"
+            aria-expanded="false"
           >
+            Services
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <!-- Dropdown panel -->
+          <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 pointer-events-none group-hover:pointer-events-auto">
+            <div class="bg-white rounded-xl shadow-[0_8px_40px_rgba(0,0,0,.12)] border border-stone-100 py-2 min-w-[220px]">
+              {serviceLinks.map((link) => (
+                <a href={link.href} class="dropdown-link">
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Top-level links -->
+        {topLinks.map((link) => (
+          <a href={link.href} class="nav-link">
             {link.label}
           </a>
         ))}
       </nav>
 
+      <!-- Right: CTA + hamburger -->
       <div class="flex items-center gap-3 shrink-0">
         <a
-          href="/contact"
-          class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-lg font-semibold text-sm text-white bg-[#1e3a5f] hover:bg-[#2d4a6f] transition-colors shadow-sm hover:shadow-md"
+          href="/contact#audit"
+          class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-lg font-semibold text-sm text-stone-900 bg-[#c9a227] hover:bg-[#d4af37] transition-colors shadow-sm hover:shadow-md"
         >
           Free Audit
         </a>
@@ -41,20 +84,31 @@ import { SITE, NAV_LINKS, CTAS } from '../config/site';
       </div>
     </div>
 
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-stone-200/80">
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-stone-100">
       <nav class="py-4 flex flex-col gap-0.5" aria-label="Mobile navigation">
-        {NAV_LINKS.map((link) => (
+        <p class="px-4 pt-1 pb-1 text-[10px] font-bold uppercase tracking-[0.16em] text-stone-400">Services</p>
+        {serviceLinks.map((link) => (
           <a
             href={link.href}
-            class="px-4 py-3 rounded-lg text-stone-600 hover:text-[#1e3a5f] hover:bg-stone-50 font-medium transition-colors"
+            class="px-4 py-2.5 rounded-lg text-stone-600 hover:text-[#1e3a5f] hover:bg-stone-50 font-medium transition-colors text-sm"
           >
             {link.label}
           </a>
         ))}
-        <div class="mt-3 pt-3 border-t border-stone-200">
+        <div class="my-2 border-t border-stone-100" />
+        {topLinks.map((link) => (
           <a
-            href="/contact"
-            class="flex justify-center px-6 py-3.5 rounded-lg font-semibold text-white bg-[#1e3a5f] hover:bg-[#2d4a6f] transition-colors"
+            href={link.href}
+            class="px-4 py-2.5 rounded-lg text-stone-600 hover:text-[#1e3a5f] hover:bg-stone-50 font-medium transition-colors text-sm"
+          >
+            {link.label}
+          </a>
+        ))}
+        <div class="mt-3 pt-3 border-t border-stone-100">
+          <a
+            href="/contact#audit"
+            class="flex justify-center px-6 py-3.5 rounded-lg font-semibold text-stone-900 bg-[#c9a227] hover:bg-[#d4af37] transition-colors"
           >
             {CTAS.primary}
           </a>
@@ -68,7 +122,8 @@ import { SITE, NAV_LINKS, CTAS } from '../config/site';
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   btn?.addEventListener('click', () => {
-    const open = menu?.classList.toggle('hidden');
-    btn?.setAttribute('aria-expanded', open ? 'false' : 'true');
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    btn?.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
   });
 </script>

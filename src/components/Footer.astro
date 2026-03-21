@@ -5,18 +5,29 @@ const phoneHref = `tel:${SITE.phone.replace(/\D/g, '')}`;
 const emailHref = `mailto:${SITE.email}`;
 ---
 
-<footer class="bg-stone-900 text-stone-300">
+<footer class="bg-stone-900 text-stone-300 border-t-2 border-[#c9a227]/50">
   <div class="content-width section-padding">
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+      <!-- Brand column -->
       <div class="lg:col-span-2">
-        <a href="/" class="font-serif font-bold text-2xl text-white block mb-4">{SITE.name}</a>
-        <p class="text-stone-400 max-w-md mb-6">{SITE.description}</p>
-        <p class="text-stone-400">{SITE.tagline}</p>
+        <a href="/" class="inline-block mb-5" aria-label="NJ Web Studio - Home">
+          <img
+            src="/logo.svg"
+            alt="NJ Web Studio"
+            class="h-8 w-auto brightness-0 invert opacity-80"
+            width="160"
+            height="36"
+          />
+        </a>
+        <p class="text-stone-400 max-w-md mb-5 leading-relaxed">{SITE.description}</p>
+        <p class="text-stone-500 text-sm">{SITE.tagline}</p>
       </div>
 
+      <!-- Services column -->
       <div>
-        <h3 class="font-semibold text-white mb-4">Services</h3>
-        <ul class="space-y-3">
+        <h3 class="font-semibold text-white mb-5 text-sm uppercase tracking-wider">Services</h3>
+        <ul class="space-y-3 text-sm">
           <li><a href="/web-design-new-jersey" class="hover:text-white transition-colors">Web Design</a></li>
           <li><a href="/website-redesign-new-jersey" class="hover:text-white transition-colors">Website Redesign</a></li>
           <li><a href="/local-seo-new-jersey" class="hover:text-white transition-colors">Local SEO</a></li>
@@ -25,18 +36,27 @@ const emailHref = `mailto:${SITE.email}`;
         </ul>
       </div>
 
+      <!-- Connect column -->
       <div>
-        <h3 class="font-semibold text-white mb-4">Connect</h3>
-        <ul class="space-y-3">
+        <h3 class="font-semibold text-white mb-5 text-sm uppercase tracking-wider">Connect</h3>
+        <ul class="space-y-3 text-sm">
           <li><a href={emailHref} class="hover:text-white transition-colors">{SITE.email}</a></li>
           <li><a href={phoneHref} class="hover:text-white transition-colors">{SITE.phone}</a></li>
-          <li><a href="/contact" class="inline-flex items-center justify-center mt-4 px-4 py-2.5 rounded-lg font-semibold text-sm text-stone-900 bg-[#c9a227] hover:bg-[#d4af37]">{CTAS.primary}</a></li>
+          <li>
+            <a
+              href="/contact#audit"
+              class="inline-flex items-center justify-center mt-3 px-4 py-2.5 rounded-lg font-semibold text-sm text-stone-900 bg-[#c9a227] hover:bg-[#d4af37] transition-colors"
+            >
+              {CTAS.primary}
+            </a>
+          </li>
         </ul>
       </div>
     </div>
 
-    <div class="mt-16 pt-8 border-t border-stone-700 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-stone-500 text-sm">� {currentYear} {SITE.name}. All rights reserved.</p>
+    <!-- Bottom bar -->
+    <div class="mt-16 pt-8 border-t border-stone-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-stone-500 text-sm">&copy; {currentYear} {SITE.name}. All rights reserved.</p>
       <div class="flex gap-6 text-sm">
         <a href="/contact" class="hover:text-white transition-colors">Contact</a>
         <a href="/about" class="hover:text-white transition-colors">About</a>

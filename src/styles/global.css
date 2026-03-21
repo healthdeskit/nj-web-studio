@@ -32,7 +32,7 @@
   .content-wide { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
   /* Cards - border-radius 12px, shadow system */
   .card-premium {
-    @apply bg-white rounded-xl border border-stone-200 shadow-[0_1px_3px_rgba(0,0,0,.04)] hover:shadow-[0_4px_20px_rgba(0,0,0,.08)] transition-shadow duration-300;
+    @apply bg-white rounded-xl border border-stone-200 shadow-[0_1px_3px_rgba(0,0,0,.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,.10)] hover:-translate-y-0.5 transition-all duration-300;
   }
   .card-elevated {
     @apply bg-white rounded-xl shadow-[0_4px_24px_rgba(0,0,0,.06)] border border-stone-100;
@@ -77,4 +77,48 @@
   .input-field {
     @apply w-full px-4 py-3 rounded-lg border border-stone-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors;
   }
+
+  /* Nav link — animated underline on hover */
+  .nav-link {
+    @apply relative px-3 py-2 text-sm font-medium text-stone-600 hover:text-[#1e3a5f] transition-colors duration-200;
+  }
+
+  /* Dropdown link — for Services submenu */
+  .dropdown-link {
+    @apply block px-5 py-2.5 text-sm font-medium text-stone-700 hover:text-[#1e3a5f] hover:bg-stone-50 transition-colors;
+  }
+
+  /* Section overline — gold bar + uppercase tracking label */
+  .section-overline {
+    @apply flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-[#c9a227] mb-5;
+  }
+}
+
+/* Nav link animated underline */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.75rem;
+  right: 0.75rem;
+  height: 2px;
+  background: #1e3a5f;
+  border-radius: 9999px;
+  transform: scaleX(0);
+  transition: transform 0.22s ease;
+  transform-origin: left center;
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Section overline gold bar */
+.section-overline::before {
+  content: '';
+  display: inline-block;
+  width: 1.5rem;
+  height: 2px;
+  background: #c9a227;
+  border-radius: 9999px;
+  flex-shrink: 0;
 }

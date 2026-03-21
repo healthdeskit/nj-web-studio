@@ -15,6 +15,8 @@ const { headline, subheadline, primaryCta = CTAS.primary, secondaryCta = CTAS.se
 ---
 
 <section class={`relative overflow-hidden flex items-center ${variant === 'home' ? 'min-h-[85vh] md:min-h-[90vh]' : 'min-h-[45vh] md:min-h-[52vh] py-16 md:py-24'}`}>
+
+  <!-- Background image -->
   <div class="absolute inset-0">
     <img
       src={heroImage}
@@ -26,31 +28,74 @@ const { headline, subheadline, primaryCta = CTAS.primary, secondaryCta = CTAS.se
       width="1920"
       height="1080"
     />
-    <div class={`absolute inset-0 ${variant === 'home' ? 'bg-gradient-to-r from-stone-900/92 via-stone-900/75 to-stone-900/50' : 'bg-gradient-to-r from-stone-900/88 via-stone-900/65 to-stone-900/45'}`} aria-hidden="true" />
-    <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(30,58,95,0.5)_0%,transparent_55%)]" aria-hidden="true" />
+    <!-- Primary gradient overlay -->
+    <div
+      class={`absolute inset-0 ${variant === 'home' ? 'bg-gradient-to-r from-stone-900/93 via-stone-900/75 to-stone-900/45' : 'bg-gradient-to-r from-stone-900/90 via-stone-900/68 to-stone-900/40'}`}
+      aria-hidden="true"
+    />
+    <!-- Brand tint overlay -->
+    <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(30,58,95,0.55)_0%,transparent_60%)]" aria-hidden="true" />
+    <!-- Grain texture for depth -->
+    <div
+      class="absolute inset-0 opacity-[0.035] pointer-events-none"
+      style="background-image: url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\"); background-size: 180px 180px;"
+      aria-hidden="true"
+    />
   </div>
 
+  <!-- Content -->
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
     <div class={variant === 'home' ? 'max-w-2xl' : 'max-w-3xl'}>
+
+      <!-- Kicker with gold left bar -->
       {kicker && (
-        <p class="text-xs font-semibold uppercase tracking-wider mb-4 text-[#c9a227]">{kicker}</p>
+        <p class="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-[#c9a227] mb-6">
+          <span class="inline-block w-6 h-px bg-[#c9a227] shrink-0" aria-hidden="true"></span>
+          {kicker}
+        </p>
       )}
-      <h1 class={`font-bold tracking-tight leading-[1.1] mb-6 text-white ${variant === 'home' ? 'text-4xl md:text-5xl lg:text-6xl xl:text-7xl' : 'text-3xl md:text-4xl lg:text-5xl'}`} style="font-family: 'DM Serif Display', Georgia, serif;">
+
+      <h1
+        class={`font-bold tracking-tight leading-[1.1] mb-6 text-white ${variant === 'home' ? 'text-4xl md:text-5xl lg:text-6xl xl:text-7xl' : 'text-3xl md:text-4xl lg:text-5xl'}`}
+        style="font-family: 'DM Serif Display', Georgia, serif;"
+      >
         {headline}
       </h1>
+
       {subheadline && (
-        <p class={`mb-8 leading-relaxed max-w-2xl text-stone-200 ${variant === 'home' ? 'text-lg md:text-xl' : 'text-base md:text-lg'}`}>
+        <p class={`mb-8 leading-relaxed max-w-2xl text-stone-200/90 ${variant === 'home' ? 'text-lg md:text-xl' : 'text-base md:text-lg'}`}>
           {subheadline}
         </p>
       )}
+
+      <!-- CTAs -->
       <div class="flex flex-col sm:flex-row gap-4">
-        <a href="/contact#audit" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg font-semibold text-white bg-[#c9a227] hover:bg-[#d4af37] transition-colors shadow-lg hover:shadow-xl">
+        <a
+          href="/contact#audit"
+          class="inline-flex items-center justify-center px-7 py-3.5 rounded-lg font-semibold text-stone-900 bg-[#c9a227] hover:bg-[#d4af37] transition-all duration-200 shadow-[0_4px_20px_rgba(201,162,39,.35)] hover:shadow-[0_6px_28px_rgba(201,162,39,.45)]"
+        >
           {primaryCta}
         </a>
-        <a href="/contact#call" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg font-semibold text-white border-2 border-white/80 hover:bg-white hover:text-stone-900 transition-colors">
+        <a
+          href="/contact#call"
+          class="inline-flex items-center justify-center px-7 py-3.5 rounded-lg font-semibold text-white border border-white/40 hover:bg-white hover:text-stone-900 transition-all duration-200 backdrop-blur-sm"
+        >
           {secondaryCta}
         </a>
       </div>
+
+      <!-- Niche proof pills (home only) -->
+      {variant === 'home' && (
+        <div class="flex flex-wrap items-center gap-3 mt-8 pt-8 border-t border-white/10">
+          <span class="text-white/40 text-xs font-medium tracking-wide">Serving NJ</span>
+          {['Dental Practices', 'Med Spas', 'Law Firms'].map((niche) => (
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/8 text-white/70 border border-white/14 backdrop-blur-sm">
+              {niche}
+            </span>
+          ))}
+        </div>
+      )}
+
     </div>
   </div>
 </section>
