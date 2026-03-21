@@ -1,0 +1,41 @@
+---
+import FAQSchema from './FAQSchema.astro';
+
+interface Props {
+  faqs?: Array<{ q: string; a: string }>;
+}
+
+const defaultFaqs = [
+  { q: 'What makes your websites different from template-based designs?', a: 'We build for conversion first. Every page is structured for lead capture, trust signals, and local SEO. No generic layouts—we align design with your niche, audience, and business outcomes.' },
+  { q: 'Do you work with businesses outside New Jersey?', a: 'We focus on NJ service businesses because we understand the local market, GBP dynamics, and regional search behavior. If you\'re in NJ and serious about growth, we\'re the right fit.' },
+  { q: 'What\'s included in the free audit?', a: 'We review your site for conversion gaps, technical SEO issues, speed, mobile experience, and local visibility. You get a clear, actionable report—no obligation.' },
+  { q: 'How long does a typical website project take?', a: 'Starter redesigns: 3–4 weeks. Growth projects: 5–8 weeks. Premium builds: 8–12 weeks. Timeline depends on scope, content readiness, and revision cycles.' },
+  { q: 'Do you offer ongoing support?', a: 'Yes. Our Care Plans cover security, updates, backups, and minor edits. SEO clients get ongoing optimization, content updates, and performance tracking.' },
+];
+
+const { faqs = defaultFaqs } = Astro.props;
+---
+
+<FAQSchema faqs={faqs} />
+<section class="section-padding bg-stone-50" id="faq">
+  <div class="content-width">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="heading-lg mb-12 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map((faq, i) => (
+          <details class="card-premium overflow-hidden group">
+            <summary class="p-6 cursor-pointer font-semibold text-stone-900 list-none flex justify-between items-center">
+              {faq.q}
+              <span class="text-[#1e3a5f] group-open:rotate-180 transition-transform shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 pt-0">
+              <p class="text-stone-600">{faq.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

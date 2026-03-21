@@ -1,0 +1,21 @@
+---
+const items = [
+  { label: 'NJ-Based', desc: 'Local expertise' },
+  { label: 'Lead-Focused', desc: 'Conversion engineered' },
+  { label: 'Premium Quality', desc: 'No cheap templates' },
+  { label: 'SEO Built-In', desc: 'Rank from day one' },
+];
+---
+
+<section class="py-8 md:py-10 bg-white border-y border-stone-200">
+  <div class="content-width">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+      {items.map((item) => (
+        <div class="flex flex-col items-center text-center">
+          <span class="font-semibold text-stone-900">{item.label}</span>
+          <span class="text-sm text-stone-500 mt-0.5">{item.desc}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

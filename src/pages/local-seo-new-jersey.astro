@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import CTASection from '../components/CTASection.astro';
+import FAQSection from '../components/FAQSection.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+
+const faqs = [
+  { q: 'How long before local SEO starts generating results?', a: 'Most businesses see early movement in 60-90 days, with stronger compounding gains across 4-8 months. Timeline depends on competition, site quality, and consistency of execution.' },
+  { q: 'Do I need SEO if I already have referrals?', a: 'Yes. Referrals are great, but search captures buyers who do not know your name yet. Local SEO stabilizes lead flow and reduces over-reliance on word-of-mouth only.' },
+  { q: 'What makes local SEO different for service businesses?', a: 'You need location-intent page structure, GBP alignment, review strategy, and trust-focused conversion pages. Generic blog-first SEO usually underperforms for local service intent.' },
+  { q: 'Can you optimize our existing website?', a: 'Yes. We can optimize your current website, but if structure is fundamentally weak, we will recommend redesign-first to avoid wasting monthly SEO spend.' },
+];
+---
+
+<BaseLayout
+  title="Local SEO New Jersey | Get Found When NJ Prospects Search"
+  description="Local SEO for New Jersey service businesses. Technical SEO, GBP optimization, and conversion-focused content strategy that drives qualified leads."
+  canonical="/local-seo-new-jersey"
+  ogImage="/og-image.jpg"
+>
+  <ServiceSchema
+    name="Local SEO"
+    description="Local SEO and Google Business Profile optimization for New Jersey service businesses."
+    path="/local-seo-new-jersey"
+  />
+
+  <Breadcrumb items={[{ label: 'Local SEO', href: '/local-seo-new-jersey' }]} />
+  <Hero
+    headline="Local SEO for New Jersey Service Businesses"
+    subheadline="Rank where local buyers search. Convert traffic into calls with technical SEO, GBP optimization, and intent-driven page architecture."
+    variant="page"
+  />
+
+  <section class="section-padding bg-white">
+    <div class="content-width">
+      <div class="grid lg:grid-cols-2 gap-10">
+        <div class="card-premium p-8">
+          <h2 class="heading-md mb-5">What Local SEO Solves</h2>
+          <ul class="space-y-3 text-stone-600">
+            <li>� You are not visible in map pack searches</li>
+            <li>� Competitors outrank you for core services</li>
+            <li>� GBP profile is incomplete or unmanaged</li>
+            <li>� Site gets traffic but weak lead conversion</li>
+            <li>� No clear internal linking or location intent structure</li>
+          </ul>
+        </div>
+        <div class="card-premium p-8">
+          <h2 class="heading-md mb-5">How We Execute</h2>
+          <p class="text-stone-600 mb-4">We combine technical SEO, content architecture, GBP optimization, and conversion UX. This keeps rankings and lead quality moving together.</p>
+          <p class="text-stone-600">You are not buying vanity metrics. You are investing in predictable local visibility that supports real pipeline growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-stone-50">
+    <div class="content-width">
+      <h2 class="heading-lg mb-8">Monthly SEO Packages</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card-elevated p-8">
+          <h3 class="text-lg font-semibold text-stone-900 mb-2">Local SEO Essentials</h3>
+          <p class="text-[#1e3a5f] font-bold mb-4">$900/month</p>
+          <p class="text-stone-600 text-sm mb-4">Technical cleanup, baseline content, GBP foundation, and monthly progress tracking.</p>
+          <a href="/contact#audit" class="btn-secondary text-sm py-2.5 mt-2 inline-block">Get Started</a>
+        </div>
+        <div class="card-elevated p-8 border-2 border-[#1e3a5f]">
+          <span class="text-xs font-semibold text-[#1e3a5f] uppercase tracking-wide">Popular</span>
+          <h3 class="text-lg font-semibold text-stone-900 mb-2 mt-2">Local SEO Growth</h3>
+          <p class="text-[#1e3a5f] font-bold mb-4">$1,350 � $1,750/month</p>
+          <p class="text-stone-600 text-sm mb-4">Deeper content strategy, citation quality, GBP momentum, and conversion improvements.</p>
+          <a href="/contact#audit" class="btn-primary text-sm py-2.5 mt-2 inline-block">Get Started</a>
+        </div>
+        <div class="card-elevated p-8">
+          <h3 class="text-lg font-semibold text-stone-900 mb-2">Local SEO Authority</h3>
+          <p class="text-[#1e3a5f] font-bold mb-4">$2,200 � $3,000/month</p>
+          <p class="text-stone-600 text-sm mb-4">Competitive niche strategy with stronger authority building and high-intent page expansion.</p>
+          <a href="/contact#audit" class="btn-secondary text-sm py-2.5 mt-2 inline-block">Get Started</a>
+        </div>
+      </div>
+
+      <div class="mt-14 card-proof">
+        <h3 class="heading-sm mb-3">Google Business Profile Is Part of SEO, Not Separate</h3>
+        <p class="text-stone-600">Your GBP listing, website service pages, and local trust signals should reinforce each other. We build that system so ranking improvements translate into real calls.</p>
+        <a href="/google-business-profile-optimization-nj" class="inline-flex mt-4 font-semibold text-[#1e3a5f] hover:underline">See GBP optimization services ?</a>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+  <CTASection />
+</BaseLayout>

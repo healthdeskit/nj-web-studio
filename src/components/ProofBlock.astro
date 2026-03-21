@@ -1,0 +1,25 @@
+---
+interface Props {
+  quote: string;
+  attribution?: string;
+  role?: string;
+  variant?: 'default' | 'highlight';
+}
+
+const { quote, attribution, role, variant = 'default' } = Astro.props;
+---
+
+<blockquote class={`card-proof ${variant === 'highlight' ? 'border-[#1e3a5f]/20 bg-[#1e3a5f]/5' : ''}`}>
+  <p class="text-lg text-stone-700 leading-relaxed mb-6">"{quote}"</p>
+  {attribution && (
+    <footer class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full bg-[#1e3a5f]/10 flex items-center justify-center text-[#1e3a5f] font-semibold">
+        {attribution.charAt(0)}
+      </div>
+      <div>
+        <cite class="font-semibold text-stone-900 not-italic">{attribution}</cite>
+        {role && <span class="block text-sm text-stone-500">{role}</span>}
+      </div>
+    </footer>
+  )}
+</blockquote>

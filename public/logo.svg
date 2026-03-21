@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="none">
+  <!-- Icon: Browser window + upward arrow (growth) -->
+  <g transform="translate(0 2)">
+    <rect x="2" y="4" width="36" height="28" rx="4" stroke="#1e3a5f" stroke-width="2" fill="none"/>
+    <rect x="6" y="8" width="28" height="4" rx="1" fill="#1e3a5f" opacity="0.3"/>
+    <path d="M12 24l6-8 6 8 6-8" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="46" y="28" font-family="Georgia, 'DM Serif Display', serif" font-size="17" font-weight="700" fill="#1e3a5f">NJ Web Studio</text>
+</svg>

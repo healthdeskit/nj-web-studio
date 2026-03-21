@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import TrustStrip from '../components/TrustStrip.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import WhyMostFail from '../components/WhyMostFail.astro';
+import ResultsPreview from '../components/ResultsPreview.astro';
+import ProofBlock from '../components/ProofBlock.astro';
+import IndustriesSection from '../components/IndustriesSection.astro';
+import ProcessSection from '../components/ProcessSection.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE, CTAS } from '../config/site';
+---
+
+<BaseLayout
+  title={SITE.name}
+  description={SITE.description}
+  canonical="/"
+  ogImage="/og-image.jpg"
+>
+  <Hero
+    kicker="NJ-Based � Premium Local Specialist"
+    headline="Lead-Focused Web Design & Local SEO for New Jersey Service Businesses"
+    subheadline={SITE.tagline}
+    primaryCta={CTAS.primary}
+    secondaryCta={CTAS.secondary}
+  />
+  <TrustStrip />
+  <ServicesSection />
+  <WhyMostFail />
+  <ResultsPreview />
+  <section class="section-padding bg-stone-50">
+    <div class="content-width">
+      <div class="max-w-3xl mx-auto">
+        <ProofBlock
+          quote="Most web designers deliver a site and walk away. NJ Web Studio treats your website as a growth asset. They think about who's searching, what happens when someone lands on a page, and how to turn traffic into calls. That's the difference."
+          attribution="Practice owner"
+          role="Dental practice, Central NJ"
+          variant="highlight"
+        />
+      </div>
+    </div>
+  </section>
+  <IndustriesSection />
+  <ProcessSection />
+  <FAQSection />
+  <CTASection />
+</BaseLayout>

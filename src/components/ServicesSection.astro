@@ -1,0 +1,44 @@
+---
+const services = [
+  {
+    title: 'Website Design & Redesign',
+    description: 'Lead-focused websites built for New Jersey service businesses. We don\'t just design—we engineer for calls, trust, and local visibility.',
+    href: '/web-design-new-jersey',
+    cta: 'Learn more',
+  },
+  {
+    title: 'Local SEO + Google Business',
+    description: 'Get found when local prospects search. Technical SEO, content strategy, and GBP optimization tailored for dentists, med spas, law firms, and more.',
+    href: '/local-seo-new-jersey',
+    cta: 'Learn more',
+  },
+  {
+    title: 'Website Care Plans',
+    description: 'Ongoing security, updates, backups, and peace of mind. Your site stays fast, secure, and ready to convert.',
+    href: '/website-maintenance-care-plans',
+    cta: 'Learn more',
+  },
+];
+---
+
+<section class="section-padding bg-white">
+  <div class="content-width">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="heading-lg mb-4">Three Ways We Help NJ Businesses Grow</h2>
+      <p class="text-stone-600 text-lg">We focus on what actually moves the needle: websites that convert and local visibility that brings qualified leads.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {services.map((s) => (
+        <article class="card-premium p-8">
+          <h3 class="text-xl font-semibold text-stone-900 mb-3">{s.title}</h3>
+          <p class="text-stone-600 mb-6">{s.description}</p>
+          <a href={s.href} class="font-semibold text-[#1e3a5f] hover:underline inline-flex items-center gap-1">
+            {s.cta}
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

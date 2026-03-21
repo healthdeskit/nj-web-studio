@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CTASection from '../components/CTASection.astro';
+
+const faqs = [
+  { q: 'Do you publish made-up performance numbers?', a: 'No. We do not fabricate metrics. If hard performance data is limited, we show proof of thinking, architecture quality, and implementation decisions that directly affect conversion and SEO outcomes.' },
+  { q: 'What kind of proof can we expect early?', a: 'In early engagements, proof usually comes from before/after positioning, improved page structure, stronger CTA flow, technical cleanup, and clear process visibility.' },
+  { q: 'Can you build case-study pages later?', a: 'Yes. The site architecture is designed to expand into deeper proof pages as project outcomes mature and more measurable data is available.' },
+];
+---
+
+<BaseLayout
+  title="Results & Our Approach"
+  description="See how NJ Web Studio approaches conversion-focused web design and local SEO execution with clear process, strategic structure, and honest proof."
+  canonical="/results"
+  ogImage="/og-image.jpg"
+>
+  <Breadcrumb items={[{ label: 'Results' }]} />
+  <Hero
+    headline="Results & Our Approach"
+    subheadline="No inflated claims. We focus on strategic execution that improves trust, conversion flow, and local visibility."
+    variant="page"
+  />
+
+  <section class="section-padding bg-white">
+    <div class="content-width">
+      <h2 class="heading-lg mb-8">Proof of Thinking, Process, and Execution</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <article class="card-proof">
+          <h3 class="heading-sm mb-3">Before/After Positioning Improvements</h3>
+          <p class="text-stone-600">We reposition generic service messaging into niche-aware, trust-first offers. This reduces weak-fit inquiries and increases buyer confidence before contact.</p>
+        </article>
+        <article class="card-proof">
+          <h3 class="heading-sm mb-3">Conversion Architecture Upgrades</h3>
+          <p class="text-stone-600">We rebuild page flow so visitors understand value faster, encounter proof earlier, and reach contact actions without friction.</p>
+        </article>
+        <article class="card-proof">
+          <h3 class="heading-sm mb-3">Technical SEO Foundations</h3>
+          <p class="text-stone-600">Schema, metadata, internal linking, and clean URL structure are implemented to support long-term organic growth and stronger crawlability.</p>
+        </article>
+        <article class="card-proof">
+          <h3 class="heading-sm mb-3">Operational Quality</h3>
+          <p class="text-stone-600">Reusable component architecture, content structure, and launch QA reduce fragility and make future scaling significantly easier.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-stone-50">
+    <div class="content-width">
+      <h2 class="heading-lg mb-6">How We Measure Progress</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card-premium p-6">
+          <p class="text-sm uppercase tracking-wide text-[#1e3a5f] font-semibold mb-2">Lead Quality</p>
+          <p class="text-stone-600">Are more serious buyers converting, and are low-fit inquiries declining?</p>
+        </div>
+        <div class="card-premium p-6">
+          <p class="text-sm uppercase tracking-wide text-[#1e3a5f] font-semibold mb-2">Conversion Flow</p>
+          <p class="text-stone-600">Are users reaching service pages, trust blocks, and contact CTAs in the intended sequence?</p>
+        </div>
+        <div class="card-premium p-6">
+          <p class="text-sm uppercase tracking-wide text-[#1e3a5f] font-semibold mb-2">Visibility Signals</p>
+          <p class="text-stone-600">Are pages indexing correctly and capturing more local-intent discovery opportunities?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+  <CTASection />
+</BaseLayout>

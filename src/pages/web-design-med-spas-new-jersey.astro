@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import AuditForm from '../components/AuditForm.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CTASection from '../components/CTASection.astro';
+
+const faqs = [
+  { q: 'Why do med spas need premium visuals?', a: 'Med spas sell aesthetic outcomes. Your site must reflect the quality of your services. Premium imagery, clean layout, and trust signals are non-negotiable—visitors judge your brand in seconds.' },
+  { q: 'How do you structure treatment pages?', a: 'Each treatment gets its own page with clear descriptions, benefits, before/after potential, and booking or consultation CTAs. We organize for both SEO and conversion.' },
+  { q: 'What about offer and promotion strategy?', a: 'We design for seasonal offers, membership programs, and consultation conversions. Your site should support your business model—not fight it.' },
+];
+---
+
+<BaseLayout
+  title="Web Design for Med Spas New Jersey | Premium Aesthetic Practice Websites"
+  description="Web design for New Jersey med spas. Premium visuals, treatment pages, booking intent, and brand trust. Built for aesthetic practices."
+  canonical="/web-design-med-spas-new-jersey"
+>
+  <Breadcrumb items={[{ label: 'Web Design', href: '/web-design-new-jersey' }, { label: 'Med Spas' }]} />
+  <Hero
+    headline="Web Design for Med Spas in New Jersey"
+    subheadline="Premium visuals, aesthetic perception, treatment pages, and booking intent. We build med spa websites that reflect your brand and convert."
+    variant="page"
+  />
+  <section class="pt-10 pb-0 bg-white">
+    <div class="content-width">
+      <img src="/images/niches/med-spas.webp" alt="Med spa web design direction with premium visual style" class="w-full rounded-2xl border border-stone-200 shadow-md" width="1200" height="800" loading="lazy" decoding="async" />
+    </div>
+  </section>
+  <section class="section-padding bg-white">
+    <div class="content-width">
+      <div class="max-w-3xl mb-12">
+        <h2 class="heading-md mb-6">Med Spas Need Aesthetic Excellence Online</h2>
+        <p class="text-stone-600 text-lg mb-6">Your website is often the first impression. For med spas, that means premium imagery, elegant typography, and a layout that communicates quality. We design for aesthetic perception—and for conversion.</p>
+        <p class="text-stone-600 text-lg">Treatment pages, before/after sections, offers, and consultation CTAs are structured to support your business model and local discovery.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        <div class="card-premium p-8">
+          <h3 class="text-xl font-semibold text-stone-900 mb-4">Niche-Specific Priorities</h3>
+          <ul class="text-stone-600 space-y-2">
+            <li>• Premium visual design</li>
+            <li>• Treatment and service architecture</li>
+            <li>• Brand trust and reputation</li>
+            <li>• Booking and consultation intent</li>
+            <li>• Offer and promotion strategy</li>
+          </ul>
+        </div>
+        <div class="card-premium p-8">
+          <h3 class="text-xl font-semibold text-stone-900 mb-4">Local Discovery</h3>
+          <p class="text-stone-600 mb-4">Med spas compete on local search. We optimize for "med spa NJ," treatment-specific searches, and GBP visibility so prospects find you when they're ready.</p>
+          <a href="/local-seo-new-jersey" class="font-semibold text-primary hover:underline">Learn about Local SEO →</a>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="heading-md mb-6">Ready to Elevate Your Med Spa Website?</h2>
+          <p class="text-stone-600 mb-6">Get a free audit. We'll assess your visuals, conversion paths, and local visibility—and show you what's working and what isn't.</p>
+          <AuditForm variant="sidebar" />
+        </div>
+        <div>
+          <p class="text-stone-600">Our Premium Niche Build package ($7,500–$10,500) is ideal for med spas. Custom trust sections, treatment architecture, and conversion-focused design.</p>
+          <a href="/web-design-new-jersey" class="inline-block mt-6 font-semibold text-primary hover:underline">View all web design packages →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+  <CTASection />
+</BaseLayout>
+

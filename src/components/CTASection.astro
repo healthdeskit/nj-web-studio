@@ -1,0 +1,36 @@
+---
+import { CTAS } from '../config/site';
+
+interface Props {
+  headline?: string;
+  subheadline?: string;
+  variant?: 'primary' | 'dark';
+}
+
+const {
+  headline = 'Ready to Get More Calls, More Trust, and Better Local Visibility?',
+  subheadline = 'Start with a free audit. No obligation. Clear next steps.',
+  variant = 'primary',
+} = Astro.props;
+
+const isDark = variant === 'dark';
+---
+
+<section class={`py-16 md:py-24 ${isDark ? 'bg-stone-900' : 'bg-[#1e3a5f]'}`}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" style="font-family: 'DM Serif Display', Georgia, serif;">
+      {headline}
+    </h2>
+    <p class={`text-lg mb-8 max-w-2xl mx-auto ${isDark ? 'text-stone-300' : 'text-white/90'}`}>
+      {subheadline}
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a href="/contact" class="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3.5 rounded-lg font-semibold text-stone-900 bg-[#c9a227] hover:bg-[#d4af37] transition-colors">
+        {CTAS.primary}
+      </a>
+      <a href="/contact#call" class={`w-full sm:w-auto inline-flex justify-center items-center px-6 py-3.5 rounded-lg font-semibold border-2 transition-colors ${isDark ? 'border-white text-white hover:bg-white hover:text-stone-900' : 'border-white text-white hover:bg-white hover:text-[#1e3a5f]'}`}>
+        {CTAS.secondary}
+      </a>
+    </div>
+  </div>
+</section>

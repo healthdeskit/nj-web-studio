@@ -1,0 +1,5 @@
+# Render Static Site - NJ Web Studio
+# Connect via GitHub: New > Static Site > Connect repo
+# Build Command: npm run build
+# Publish Directory: dist
+# Custom domain: add njwebstudio.net in Render dashboard

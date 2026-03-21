@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import CTASection from '../components/CTASection.astro';
+import FAQSection from '../components/FAQSection.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+
+const faqs = [
+  { q: 'How often should a GBP profile be updated?', a: 'At minimum weekly. Profiles with fresh posts, accurate service data, and active review responses typically perform better in local visibility and conversion behavior.' },
+  { q: 'Can GBP optimization help if my website is weak?', a: 'It can help visibility, but weak landing pages hurt conversion. GBP and website structure should be aligned to turn map impressions into real inquiries.' },
+  { q: 'Do you handle reviews and responses?', a: 'Yes. We can help build a sustainable review process and response framework that improves trust while staying aligned with your brand voice.' },
+];
+---
+
+<BaseLayout
+  title="Google Business Profile Optimization NJ | GBP Setup & Management"
+  description="Google Business Profile optimization for New Jersey businesses. Setup, cleanup, and ongoing management to improve map visibility and call volume."
+  canonical="/google-business-profile-optimization-nj"
+  ogImage="/og-image.jpg"
+>
+  <ServiceSchema
+    name="Google Business Profile Optimization"
+    description="GBP setup, cleanup, and monthly optimization for New Jersey service businesses."
+    path="/google-business-profile-optimization-nj"
+  />
+
+  <Breadcrumb items={[{ label: 'Google Business Profile', href: '/google-business-profile-optimization-nj' }]} />
+  <Hero
+    headline="Google Business Profile Optimization for NJ Businesses"
+    subheadline="Your GBP listing is often the first impression. We optimize it for visibility, trust, and higher-quality calls."
+    variant="page"
+  />
+
+  <section class="section-padding bg-white">
+    <div class="content-width">
+      <div class="grid lg:grid-cols-2 gap-10">
+        <div class="card-premium p-8">
+          <h2 class="heading-md mb-5">Why GBP Matters Commercially</h2>
+          <p class="text-stone-600 mb-4">Map-pack visibility can change lead volume quickly. But profile quality matters just as much as ranking: categories, services, photos, and review handling all influence click and call behavior.</p>
+          <p class="text-stone-600">We optimize GBP as a conversion asset, not a checklist task.</p>
+        </div>
+        <div class="card-premium p-8">
+          <h2 class="heading-md mb-5">Common GBP Problems We Fix</h2>
+          <ul class="space-y-3 text-stone-600">
+            <li>� Incorrect categories and missing services</li>
+            <li>� Thin profile content and weak media</li>
+            <li>� Inconsistent NAP signals across citations</li>
+            <li>� Poor review response process</li>
+            <li>� No posting cadence or local relevance signals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-stone-50">
+    <div class="content-width">
+      <h2 class="heading-lg mb-8">GBP Offers</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card-elevated p-8">
+          <h3 class="text-xl font-semibold text-stone-900 mb-4">GBP Setup / Cleanup</h3>
+          <p class="text-[#1e3a5f] font-bold mb-4">$450 � $850 one-time</p>
+          <p class="text-stone-600 text-sm mb-5">Profile architecture, category/service optimization, media and content standards, and local consistency cleanup.</p>
+          <a href="/contact#audit" class="btn-secondary text-sm py-2.5">Get Started</a>
+        </div>
+        <div class="card-elevated p-8 border-2 border-[#1e3a5f]">
+          <h3 class="text-xl font-semibold text-stone-900 mb-4">GBP Monthly</h3>
+          <p class="text-[#1e3a5f] font-bold mb-4">$250 � $500/month</p>
+          <p class="text-stone-600 text-sm mb-5">Posting cadence, review management support, listing updates, and ongoing visibility tuning.</p>
+          <a href="/contact#audit" class="btn-primary text-sm py-2.5">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+  <CTASection />
+</BaseLayout>

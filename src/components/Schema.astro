@@ -1,0 +1,71 @@
+---
+import { SITE } from '../config/site';
+
+interface Props {
+  pagePath?: string;
+  pageTitle?: string;
+}
+
+const { pagePath = '/', pageTitle = SITE.name } = Astro.props;
+const pageUrl = `${SITE.url}${pagePath}`;
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE.name,
+  url: SITE.url,
+  logo: `${SITE.url}/logo.svg`,
+  description: SITE.description,
+  telephone: SITE.phone,
+  email: SITE.email,
+};
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: SITE.name,
+  image: `${SITE.url}/og-image.jpg`,
+  url: SITE.url,
+  telephone: SITE.phone,
+  email: SITE.email,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: SITE.location.address,
+    addressRegion: SITE.location.region,
+    addressCountry: 'US',
+  },
+  areaServed: 'New Jersey',
+  priceRange: '$$-$$$',
+  description: SITE.description,
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.name,
+  url: SITE.url,
+  description: SITE.supportingMessage,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${SITE.url}/contact`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: pageTitle,
+  url: pageUrl,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: SITE.name,
+    url: SITE.url,
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />

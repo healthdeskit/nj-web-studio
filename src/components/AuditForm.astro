@@ -1,0 +1,76 @@
+---
+interface Props {
+  variant?: 'inline' | 'sidebar' | 'full';
+}
+
+const { variant = 'inline' } = Astro.props;
+---
+
+<form class={`audit-form ${variant === 'full' ? 'max-w-2xl' : variant === 'sidebar' ? 'max-w-sm' : ''}`} action="/thank-you" method="GET" id="audit-form" novalidate>
+  <input type="hidden" name="source" value="audit" />
+  <div class="space-y-4">
+    <div>
+      <label for="name" class="block text-sm font-medium text-stone-700 mb-1">Name *</label>
+      <input type="text" id="name" name="name" required class="input-field" placeholder="Your name" />
+    </div>
+    <div>
+      <label for="business" class="block text-sm font-medium text-stone-700 mb-1">Business Name *</label>
+      <input type="text" id="business" name="business" required class="input-field" placeholder="Your business" />
+    </div>
+    <div>
+      <label for="website" class="block text-sm font-medium text-stone-700 mb-1">Current Website URL</label>
+      <input type="url" id="website" name="website" class="input-field" placeholder="https://" />
+    </div>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div>
+        <label for="email" class="block text-sm font-medium text-stone-700 mb-1">Email *</label>
+        <input type="email" id="email" name="email" required class="input-field" placeholder="you@business.com" />
+      </div>
+      <div>
+        <label for="phone" class="block text-sm font-medium text-stone-700 mb-1">Phone *</label>
+        <input type="tel" id="phone" name="phone" required class="input-field" placeholder="(973) 555-0123" />
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div>
+        <label for="service" class="block text-sm font-medium text-stone-700 mb-1">Primary Interest</label>
+        <select id="service" name="service" class="input-field">
+          <option value="">Select...</option>
+          <option value="website-design">Website Design / Redesign</option>
+          <option value="local-seo">Local SEO</option>
+          <option value="gbp">Google Business Profile</option>
+          <option value="maintenance">Website Care Plan</option>
+          <option value="audit">Just the Audit</option>
+        </select>
+      </div>
+      <div>
+        <label for="target-location" class="block text-sm font-medium text-stone-700 mb-1">Target Location</label>
+        <input type="text" id="target-location" name="targetLocation" class="input-field" placeholder="Ex: Newark, Princeton" />
+      </div>
+    </div>
+    <div>
+      <label for="budget" class="block text-sm font-medium text-stone-700 mb-1">Project / Marketing Budget (Optional)</label>
+      <select id="budget" name="budget" class="input-field">
+        <option value="">Select budget range...</option>
+        <option value="2500-3500">$2,500 - $3,500</option>
+        <option value="4500-6500">$4,500 - $6,500</option>
+        <option value="7500-10500">$7,500 - $10,500</option>
+        <option value="900-1750">$900 - $1,750 / month SEO</option>
+        <option value="2200-3000">$2,200 - $3,000 / month SEO</option>
+        <option value="not-sure">Not sure yet</option>
+      </select>
+    </div>
+    <div>
+      <label for="problem" class="block text-sm font-medium text-stone-700 mb-1">Biggest Website/SEO Problem</label>
+      <textarea id="problem" name="problemSummary" rows="3" class="input-field" placeholder="What is your biggest challenge right now?"></textarea>
+    </div>
+    <div>
+      <label for="message" class="block text-sm font-medium text-stone-700 mb-1">Additional Notes</label>
+      <textarea id="message" name="message" rows="3" class="input-field" placeholder="Anything else we should know?"></textarea>
+    </div>
+    <p class="text-xs text-stone-500">By submitting, you agree to be contacted about your audit request. No spam, no pressure.</p>
+    <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-lg font-semibold text-white bg-[#1e3a5f] hover:bg-[#2d4a6f]">
+      Get My Free Audit
+    </button>
+  </div>
+</form>

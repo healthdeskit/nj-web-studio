@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import AuditForm from '../components/AuditForm.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CTASection from '../components/CTASection.astro';
+
+const faqs = [
+  { q: 'Why do law firms need authority-focused design?', a: 'Clients choose attorneys based on trust and expertise. Your site must communicate authority through practice-area clarity, attorney profiles, and case-type structure. A generic site undermines credibility.' },
+  { q: 'How do you structure practice areas?', a: 'Each practice area gets dedicated pages with clear content, attorney attribution, and consultation CTAs. We organize for both SEO and conversion—clients find what they need and know exactly how to reach you.' },
+  { q: 'What about high-intent conversion?', a: 'Legal clients are high-intent. We design for consultation requests: clear CTAs, low-friction forms, and trust signals that reduce hesitation before the first contact.' },
+];
+---
+
+<BaseLayout
+  title="Web Design for Law Firms New Jersey | Authority-Focused Attorney Websites"
+  description="Web design for New Jersey law firms. Authority, case-type clarity, consultation CTA, and practice-area structure. Built for high-intent conversion."
+  canonical="/web-design-law-firms-new-jersey"
+>
+  <Breadcrumb items={[{ label: 'Web Design', href: '/web-design-new-jersey' }, { label: 'Law Firms' }]} />
+  <Hero
+    headline="Web Design for Law Firms in New Jersey"
+    subheadline="Authority, case-type clarity, consultation conversion, and practice-area structure. We build attorney websites that attract serious clients."
+    variant="page"
+  />
+  <section class="pt-10 pb-0 bg-white">
+    <div class="content-width">
+      <img src="/images/niches/law-firms.webp" alt="Law firm web design direction focused on authority and consultation intent" class="w-full rounded-2xl border border-stone-200 shadow-md" width="1200" height="800" loading="lazy" decoding="async" />
+    </div>
+  </section>
+  <section class="section-padding bg-white">
+    <div class="content-width">
+      <div class="max-w-3xl mb-12">
+        <h2 class="heading-md mb-6">Law Firms Need Authority and Clarity</h2>
+        <p class="text-stone-600 text-lg mb-6">Clients researching legal representation need to understand your practice areas, your credentials, and how to reach you—quickly. A weak or cluttered site loses high-intent leads to competitors.</p>
+        <p class="text-stone-600 text-lg">We structure law firm sites for authority: practice-area architecture, attorney profiles, case-type clarity, and consultation CTAs that convert.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        <div class="card-premium p-8">
+          <h3 class="text-xl font-semibold text-stone-900 mb-4">Niche-Specific Priorities</h3>
+          <ul class="text-stone-600 space-y-2">
+            <li>• Authority and seriousness</li>
+            <li>• Practice-area architecture</li>
+            <li>• Case-type clarity</li>
+            <li>• Consultation CTA structure</li>
+            <li>• Local credibility</li>
+          </ul>
+        </div>
+        <div class="card-premium p-8">
+          <h3 class="text-xl font-semibold text-stone-900 mb-4">Local SEO for Law Firms</h3>
+          <p class="text-stone-600 mb-4">Competitive practice areas need strong local visibility. We optimize for practice-area + location searches and GBP alignment.</p>
+          <a href="/local-seo-new-jersey" class="font-semibold text-primary hover:underline">Learn about Local SEO →</a>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="heading-md mb-6">Ready to Strengthen Your Law Firm Website?</h2>
+          <p class="text-stone-600 mb-6">Get a free audit. We'll review your practice-area structure, conversion paths, and local visibility—and show you where to improve.</p>
+          <AuditForm variant="sidebar" />
+        </div>
+        <div>
+          <p class="text-stone-600">Our Premium Niche Build package ($7,500–$10,500) is designed for law firms. Full messaging strategy, practice-area architecture, and conversion-focused design.</p>
+          <a href="/web-design-new-jersey" class="inline-block mt-6 font-semibold text-primary hover:underline">View all web design packages →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+  <CTASection />
+</BaseLayout>
+

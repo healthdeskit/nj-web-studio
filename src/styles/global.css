@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/* Design System - NJ Web Studio - Premium trust-driven palette */
+@theme {
+  --color-primary: #1e3a5f;
+  --color-primary-light: #2d4a6f;
+  --color-primary-dark: #162d47;
+  --color-accent: #c9a227;
+  --color-accent-muted: #d4af37;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply antialiased text-stone-800; }
+  p { @apply leading-relaxed; }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-lg font-semibold text-white bg-primary hover:bg-primary-light transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 shadow-md hover:shadow-lg;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-lg font-semibold text-primary border-2 border-primary hover:bg-primary hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-lg font-semibold text-stone-900 bg-accent hover:bg-accent-muted transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 shadow-md hover:shadow-lg;
+  }
+  /* Layout */
+  .section-padding { @apply py-16 md:py-24; }
+  .content-width { @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full; }
+  .content-wide { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  /* Cards - border-radius 12px, shadow system */
+  .card-premium {
+    @apply bg-white rounded-xl border border-stone-200 shadow-[0_1px_3px_rgba(0,0,0,.04)] hover:shadow-[0_4px_20px_rgba(0,0,0,.08)] transition-shadow duration-300;
+  }
+  .card-elevated {
+    @apply bg-white rounded-xl shadow-[0_4px_24px_rgba(0,0,0,.06)] border border-stone-100;
+  }
+  .card-proof {
+    @apply bg-white rounded-xl p-6 md:p-8 border border-stone-100 shadow-[0_2px_12px_rgba(0,0,0,.04)];
+  }
+  /* Typography */
+  .heading-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-stone-900 leading-[1.1];
+    font-family: 'DM Serif Display', Georgia, serif;
+  }
+  .heading-lg {
+    @apply text-3xl md:text-4xl font-bold text-stone-900;
+    font-family: 'DM Serif Display', Georgia, serif;
+  }
+  .heading-md {
+    @apply text-2xl md:text-3xl font-bold text-stone-900;
+    font-family: 'DM Serif Display', Georgia, serif;
+  }
+  .heading-sm {
+    @apply text-xl font-semibold text-stone-900;
+  }
+  .kicker {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary;
+  }
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+  .badge-primary {
+    @apply bg-primary/10 text-primary;
+  }
+  .badge-accent {
+    @apply bg-accent/15 text-stone-800;
+  }
+  /* CTA band */
+  .cta-band {
+    @apply py-12 md:py-16 rounded-2xl;
+  }
+  /* Form elements */
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-stone-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors;
+  }
+}

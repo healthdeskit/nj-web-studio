@@ -1,0 +1,41 @@
+---
+const industries = [
+  {
+    name: 'Dentists',
+    desc: 'Trust, provider credibility, treatment clarity, appointment conversion.',
+    href: '/web-design-dentists-new-jersey',
+  },
+  {
+    name: 'Med Spas',
+    desc: 'Premium visuals, aesthetic perception, treatment pages, booking intent.',
+    href: '/web-design-med-spas-new-jersey',
+  },
+  {
+    name: 'Law Firms',
+    desc: 'Authority, case-type clarity, consultation CTA, practice-area structure.',
+    href: '/web-design-law-firms-new-jersey',
+  },
+];
+---
+
+<section class="section-padding bg-stone-50">
+  <div class="content-width">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="heading-lg mb-4">Industries We Serve</h2>
+      <p class="text-stone-600 text-lg">We prioritize niches where trust, conversion, and local SEO matter most—and where we've developed deep strategic understanding.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {industries.map((i) => (
+        <a href={i.href} class="card-premium p-8 block hover:border-[#1e3a5f]/30 transition-colors">
+          <h3 class="text-xl font-semibold text-stone-900 mb-3">{i.name}</h3>
+          <p class="text-stone-600">{i.desc}</p>
+          <span class="inline-flex items-center gap-1 mt-4 font-semibold text-[#1e3a5f]">
+            Explore {i.name}
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

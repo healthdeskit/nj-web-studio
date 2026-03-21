@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import AuditForm from '../components/AuditForm.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CTASection from '../components/CTASection.astro';
+
+const faqs = [
+  { q: 'Why do dentists need conversion-focused websites?', a: 'Patients research online before calling. Your site needs to build trust quickly—provider credentials, treatment clarity, insurance/financing info—and make scheduling obvious. A generic site loses leads to competitors with stronger presence.' },
+  { q: 'What makes a dental website rank locally?', a: 'Technical SEO, local schema, GBP optimization, and content that matches search intent. We align your site structure, service pages, and location content with how patients actually search.' },
+  { q: 'Do you handle appointment booking integration?', a: 'Yes. We can integrate with popular dental scheduling tools and ensure your forms and CTAs drive appointments—not just generic contact requests.' },
+];
+---
+
+<BaseLayout
+  title="Web Design for Dentists New Jersey | Lead-Focused Dental Websites"
+  description="Professional web design for New Jersey dentists. Trust, provider credibility, treatment clarity, and appointment conversion. Built for local visibility."
+  canonical="/web-design-dentists-new-jersey"
+>
+  <Breadcrumb items={[{ label: 'Web Design', href: '/web-design-new-jersey' }, { label: 'Dentists' }]} />
+  <Hero
+    headline="Web Design for Dentists in New Jersey"
+    subheadline="Trust, provider credibility, treatment clarity, and appointment conversion. We build dental websites that help patients choose you."
+    variant="page"
+  />
+  <section class="pt-10 pb-0 bg-white">
+    <div class="content-width">
+      <img src="/images/niches/dentists.webp" alt="Dental practice web design direction with trust-first layout" class="w-full rounded-2xl border border-stone-200 shadow-md" width="1200" height="800" loading="lazy" decoding="async" />
+    </div>
+  </section>
+  <section class="section-padding bg-white">
+    <div class="content-width">
+      <div class="max-w-3xl mb-12">
+        <h2 class="heading-md mb-6">Dental Practices Need Trust Before the First Call</h2>
+        <p class="text-stone-600 text-lg mb-6">Patients don't just want a pretty site—they want to feel confident before they pick up the phone. That means clear provider profiles, treatment explanations, insurance and financing information, and an obvious path to scheduling.</p>
+        <p class="text-stone-600 text-lg">We structure dental sites for conversion: trust signals first, then clear CTAs. Mobile-first, fast, and optimized for local search.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        <div class="card-premium p-8">
+          <h3 class="text-xl font-semibold text-stone-900 mb-4">Niche-Specific Priorities</h3>
+          <ul class="text-stone-600 space-y-2">
+            <li>• Provider credentials and team trust</li>
+            <li>• Treatment and service structure</li>
+            <li>• Insurance and financing clarity</li>
+            <li>• Location and hours prominence</li>
+            <li>• Appointment conversion flow</li>
+          </ul>
+        </div>
+        <div class="card-premium p-8">
+          <h3 class="text-xl font-semibold text-stone-900 mb-4">Local SEO for Dentists</h3>
+          <p class="text-stone-600 mb-4">We align your site with GBP, local schema, and search intent. Patients searching for "dentist near me" or "family dentist NJ" should find you.</p>
+          <a href="/local-seo-new-jersey" class="font-semibold text-primary hover:underline">Learn about Local SEO →</a>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="heading-md mb-6">Ready to Improve Your Dental Website?</h2>
+          <p class="text-stone-600 mb-6">Get a free audit. We'll review your current site for conversion gaps, trust signals, and local visibility—and show you what to fix first.</p>
+          <AuditForm variant="sidebar" />
+        </div>
+        <div>
+          <p class="text-stone-600">Our Premium Niche Build package ($7,500–$10,500) is designed for dental practices. Includes full messaging strategy, custom trust sections, and results-focused architecture.</p>
+          <a href="/web-design-new-jersey" class="inline-block mt-6 font-semibold text-primary hover:underline">View all web design packages →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+  <CTASection />
+</BaseLayout>
+

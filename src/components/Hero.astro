@@ -1,0 +1,55 @@
+---
+import { CTAS } from '../config/site';
+
+interface Props {
+  headline: string;
+  subheadline?: string;
+  primaryCta?: string;
+  secondaryCta?: string;
+  variant?: 'home' | 'page';
+  kicker?: string;
+}
+
+const { headline, subheadline, primaryCta = CTAS.primary, secondaryCta = CTAS.secondary, variant = 'home', kicker } = Astro.props;
+---
+
+<section class={`relative overflow-hidden flex items-center ${variant === 'home' ? 'min-h-[85vh] md:min-h-[90vh]' : 'min-h-[50vh] md:min-h-[55vh] py-16 md:py-24'}`}>
+  <div class="absolute inset-0">
+    <img
+      src="/hero-fullwidth.webp"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover"
+      fetchpriority={variant === 'home' ? 'high' : undefined}
+      loading={variant === 'home' ? 'eager' : 'lazy'}
+      decoding="async"
+      width="1920"
+      height="1080"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-stone-900/92 via-stone-900/75 to-stone-900/50" aria-hidden="true" />
+    <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(30,58,95,0.5)_0%,transparent_55%)]" aria-hidden="true" />
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+    <div class={variant === 'home' ? 'max-w-2xl' : 'max-w-3xl'}>
+      {kicker && (
+        <p class="text-xs font-semibold uppercase tracking-wider mb-4 text-[#c9a227]">{kicker}</p>
+      )}
+      <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] mb-6 text-white" style="font-family: 'DM Serif Display', Georgia, serif;">
+        {headline}
+      </h1>
+      {subheadline && (
+        <p class="text-lg md:text-xl mb-8 leading-relaxed max-w-2xl text-stone-200">
+          {subheadline}
+        </p>
+      )}
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact#audit" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg font-semibold text-white bg-[#c9a227] hover:bg-[#d4af37] transition-colors shadow-lg hover:shadow-xl">
+          {primaryCta}
+        </a>
+        <a href="/contact#call" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg font-semibold text-white border-2 border-white/80 hover:bg-white hover:text-stone-900 transition-colors">
+          {secondaryCta}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

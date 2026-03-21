@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import CTASection from '../components/CTASection.astro';
+import FAQSection from '../components/FAQSection.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+
+const faqs = [
+  { q: 'Why do care plans matter after launch?', a: 'A website is not a one-time asset. Security patches, performance checks, backups, and ongoing improvements protect your conversion performance and brand trust over time.' },
+  { q: 'Can we use your care plan for a site you did not build?', a: 'In most cases yes, after a technical review. If there are structural risks, we provide a remediation plan first so ongoing support is predictable.' },
+  { q: 'How quickly do you respond to urgent issues?', a: 'Response times vary by plan tier, but all plans include monitoring and escalation. Priority plans receive the fastest handling and broader monthly support scope.' },
+];
+---
+
+<BaseLayout
+  title="Website Maintenance & Care Plans | Keep Your NJ Business Site Secure & Updated"
+  description="Website care plans for New Jersey businesses. Security, updates, backups, performance monitoring, and ongoing support to protect lead flow."
+  canonical="/website-maintenance-care-plans"
+  ogImage="/og-image.jpg"
+>
+  <ServiceSchema
+    name="Website Maintenance and Care Plans"
+    description="Ongoing website security, maintenance, updates, and support plans for New Jersey service businesses."
+    path="/website-maintenance-care-plans"
+  />
+
+  <Breadcrumb items={[{ label: 'Care Plans', href: '/website-maintenance-care-plans' }]} />
+  <Hero
+    headline="Website Care Plans for NJ Businesses"
+    subheadline="Protect your site from downtime, security issues, and conversion decay with structured monthly maintenance."
+    variant="page"
+  />
+
+  <section class="section-padding bg-white">
+    <div class="content-width">
+      <div class="grid lg:grid-cols-2 gap-10">
+        <div class="card-premium p-8">
+          <h2 class="heading-md mb-5">What Care Plans Protect Against</h2>
+          <ul class="space-y-3 text-stone-600">
+            <li>� Plugin/theme vulnerabilities and security drift</li>
+            <li>� Unexpected downtime and lost lead opportunities</li>
+            <li>� Slow page speed that hurts conversion and SEO</li>
+            <li>� Stale content and broken form flows</li>
+            <li>� No ownership when technical issues appear</li>
+          </ul>
+        </div>
+        <div class="card-premium p-8">
+          <h2 class="heading-md mb-5">Who This Is For</h2>
+          <p class="text-stone-600 mb-4">Businesses that rely on their website for pipeline should not run without maintenance coverage. If your site is revenue-critical, care plans are risk management, not optional overhead.</p>
+          <p class="text-stone-600">Plans scale from baseline protection to priority support based on site complexity and growth pace.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-stone-50">
+    <div class="content-width">
+      <h2 class="heading-lg mb-8">Care Plan Options</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card-elevated p-8">
+          <h3 class="text-lg font-semibold text-stone-900 mb-2">Care Basic</h3>
+          <p class="text-[#1e3a5f] font-bold mb-4">$149/month</p>
+          <ul class="text-stone-600 text-sm space-y-2 mb-5">
+            <li>� Security updates</li>
+            <li>� Routine backups</li>
+            <li>� Uptime monitoring</li>
+            <li>� Basic support queue</li>
+          </ul>
+          <a href="/contact#audit" class="btn-secondary text-sm py-2.5">Get Started</a>
+        </div>
+        <div class="card-elevated p-8 border-2 border-[#1e3a5f]">
+          <span class="text-xs font-semibold text-[#1e3a5f] uppercase tracking-wide">Popular</span>
+          <h3 class="text-lg font-semibold text-stone-900 mb-2 mt-2">Care Growth</h3>
+          <p class="text-[#1e3a5f] font-bold mb-4">$299/month</p>
+          <ul class="text-stone-600 text-sm space-y-2 mb-5">
+            <li>� Everything in Basic</li>
+            <li>� Performance optimization</li>
+            <li>� Content updates (up to 2 hrs)</li>
+            <li>� Priority response path</li>
+          </ul>
+          <a href="/contact#audit" class="btn-primary text-sm py-2.5">Get Started</a>
+        </div>
+        <div class="card-elevated p-8">
+          <h3 class="text-lg font-semibold text-stone-900 mb-2">Care Priority</h3>
+          <p class="text-[#1e3a5f] font-bold mb-4">$499/month</p>
+          <ul class="text-stone-600 text-sm space-y-2 mb-5">
+            <li>� Everything in Growth</li>
+            <li>� Extended updates (up to 5 hrs)</li>
+            <li>� Advanced monitoring</li>
+            <li>� Dedicated support coordination</li>
+          </ul>
+          <a href="/contact#audit" class="btn-secondary text-sm py-2.5">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+  <CTASection />
+</BaseLayout>

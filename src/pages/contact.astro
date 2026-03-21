@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import AuditForm from '../components/AuditForm.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE } from '../config/site';
+
+const faqs = [
+  { q: 'What happens after I submit the audit form?', a: 'We review your website, positioning, and local visibility signals, then send a practical audit summary with clear priorities. If there is a fit, we discuss next steps on a short call.' },
+  { q: 'Is this free audit a sales trap?', a: 'No. The audit is designed to deliver value first. If we are not a fit, you still leave with actionable guidance.' },
+  { q: 'Who is this best for?', a: 'Businesses serious about growth and willing to invest in better positioning, conversion quality, and local visibility. It is less suitable for ultra-low-budget projects.' },
+];
+---
+
+<BaseLayout
+  title="Contact"
+  description="Get a free website and SEO audit from NJ Web Studio. Clear next steps for improving trust, calls, and local visibility."
+  canonical="/contact"
+  ogImage="/og-image.jpg"
+>
+  <Breadcrumb items={[{ label: 'Contact' }]} />
+  <Hero
+    headline="Let's Talk About Your Website & Local Visibility"
+    subheadline="Start with a free audit. You'll get a practical review of what is hurting conversion and what to fix first."
+    variant="page"
+  />
+
+  <section class="section-padding bg-white">
+    <div class="content-width">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+        <div>
+          <h2 class="heading-md mb-6">Get a Free Website & SEO Audit</h2>
+          <p class="text-stone-600 mb-6">Share your current situation and business goals. We will review structure, messaging, and local visibility, then respond with a focused action plan.</p>
+          <div class="space-y-4 text-stone-600 mb-8">
+            <p><strong class="text-stone-900">Email:</strong> <a href={`mailto:${SITE.email}`} class="text-[#1e3a5f] hover:underline">{SITE.email}</a></p>
+            <p><strong class="text-stone-900">Phone:</strong> <a href={`tel:${SITE.phone.replace(/\D/g, '')}`} class="text-[#1e3a5f] hover:underline">{SITE.phone}</a></p>
+          </div>
+
+          <div class="card-proof">
+            <h3 class="heading-sm mb-3">What to Expect</h3>
+            <ul class="space-y-2 text-stone-600">
+              <li>� Initial response within 1�2 business days</li>
+              <li>� Honest fit assessment before any proposal</li>
+              <li>� No pressure tactics or generic agency pitch</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card-elevated p-8" id="audit">
+          <AuditForm variant="full" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-stone-50" id="call">
+    <div class="content-width text-center">
+      <h2 class="heading-md mb-4">Prefer to Talk First?</h2>
+      <p class="text-stone-600 mb-6">Book a 15-minute call. We can quickly confirm fit and point you in the right direction.</p>
+      <a href={`tel:${SITE.phone.replace(/\D/g, '')}`} class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg font-semibold text-white bg-[#1e3a5f] hover:bg-[#2d4a6f]">Call {SITE.phone}</a>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+  <CTASection variant="dark" />
+</BaseLayout>

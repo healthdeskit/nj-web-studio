@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import CTASection from '../components/CTASection.astro';
+import FAQSection from '../components/FAQSection.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+
+const faqs = [
+  { q: 'How do I know if my business needs a redesign vs small edits?', a: 'If your site has low conversion rates, unclear messaging, poor mobile UX, or weak local SEO visibility, small edits usually do not solve the core issue. A redesign lets us fix structure, positioning, and conversion flow at the system level.' },
+  { q: 'Will my rankings drop during a redesign?', a: 'Not if migration is handled correctly. We preserve high-value URLs where possible, map redirects, keep metadata clean, and launch with a structured SEO handoff to protect existing visibility.' },
+  { q: 'Do you write website content too?', a: 'Yes. We can lead messaging and page copy strategy so your new site sounds like a serious business, not generic agency filler. This is especially important in trust-heavy niches.' },
+  { q: 'How long does a redesign usually take?', a: 'Most redesign projects run 4 to 10 weeks depending on page depth, review speed, and content readiness. We provide a clear timeline before kickoff.' },
+];
+---
+
+<BaseLayout
+  title="Website Redesign New Jersey | Lead-Focused Redesigns for NJ Businesses"
+  description="Website redesign for New Jersey service businesses. Replace an outdated site with a conversion-focused system built for trust, calls, and local SEO growth."
+  canonical="/website-redesign-new-jersey"
+  ogImage="/og-image.jpg"
+>
+  <ServiceSchema
+    name="Website Redesign"
+    description="Conversion-focused website redesign for New Jersey service businesses."
+    path="/website-redesign-new-jersey"
+  />
+
+  <Breadcrumb items={[{ label: 'Website Redesign', href: '/website-redesign-new-jersey' }]} />
+  <Hero
+    headline="Website Redesign for New Jersey Service Businesses"
+    subheadline="If traffic is coming in but calls are not, your website structure is likely the problem. We redesign for trust, clarity, and conversion performance."
+    variant="page"
+  />
+
+  <section class="section-padding bg-white">
+    <div class="content-width">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div class="card-premium p-8">
+          <h2 class="heading-md mb-5">What Usually Breaks on Existing Sites</h2>
+          <ul class="space-y-3 text-stone-600">
+            <li>� Generic headlines that do not speak to buyer intent</li>
+            <li>� Service pages that explain features but miss outcomes</li>
+            <li>� Weak trust architecture (proof, process, objections)</li>
+            <li>� Confusing call-to-action paths that leak leads</li>
+            <li>� Thin local SEO structure and poor internal linking</li>
+          </ul>
+        </div>
+        <div class="card-premium p-8">
+          <h2 class="heading-md mb-5">Business Impact of a Weak Redesign Strategy</h2>
+          <p class="text-stone-600 mb-4">A cosmetic redesign can make your site look cleaner, but it often fails to improve pipeline quality. We redesign around commercial outcomes: more qualified inquiries, stronger trust, and clearer differentiation.</p>
+          <p class="text-stone-600">That means messaging strategy first, then UX and visual direction, then technical SEO and conversion mechanics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-stone-50">
+    <div class="content-width">
+      <h2 class="heading-lg mb-8">Our Redesign Framework</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="card-proof">
+          <h3 class="heading-sm mb-3">1) Audit & Positioning</h3>
+          <p class="text-stone-600">We audit UX, conversion flow, and local visibility. Then we reframe positioning to attract better-fit leads and filter low-budget buyers.</p>
+        </article>
+        <article class="card-proof">
+          <h3 class="heading-sm mb-3">2) Architecture & Copy</h3>
+          <p class="text-stone-600">We rebuild page hierarchy, service depth, and CTA routing. Every page is mapped to a clear conversion objective.</p>
+        </article>
+        <article class="card-proof">
+          <h3 class="heading-sm mb-3">3) Build & Launch</h3>
+          <p class="text-stone-600">We ship a fast, mobile-first Astro build with metadata, schema, and launch QA so the redesign performs from day one.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="content-width">
+      <h2 class="heading-lg mb-8">Redesign Packages</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card-elevated p-8">
+          <h3 class="text-lg font-semibold text-stone-900 mb-2">Starter Redesign</h3>
+          <p class="text-[#1e3a5f] font-bold mb-4">$2,500 � $3,500</p>
+          <p class="text-stone-600 text-sm mb-4">5�7 pages, one location, conversion-ready core structure.</p>
+          <a href="/contact#audit" class="btn-secondary text-sm py-2.5">Get Started</a>
+        </div>
+        <div class="card-elevated p-8 border-2 border-[#1e3a5f]">
+          <span class="text-xs font-semibold text-[#1e3a5f] uppercase tracking-wide">Most Popular</span>
+          <h3 class="text-lg font-semibold text-stone-900 mb-2 mt-2">Growth Redesign</h3>
+          <p class="text-[#1e3a5f] font-bold mb-4">$4,500 � $6,500</p>
+          <p class="text-stone-600 text-sm mb-4">8�12 pages, deeper service architecture, proof sections, stronger SEO alignment.</p>
+          <a href="/contact#audit" class="btn-primary text-sm py-2.5">Get Started</a>
+        </div>
+        <div class="card-elevated p-8">
+          <h3 class="text-lg font-semibold text-stone-900 mb-2">Premium Niche Build</h3>
+          <p class="text-[#1e3a5f] font-bold mb-4">$7,500 � $10,500</p>
+          <p class="text-stone-600 text-sm mb-4">Custom conversion strategy for dentists, med spas, and law firms.</p>
+          <a href="/contact#audit" class="btn-secondary text-sm py-2.5">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+  <CTASection />
+</BaseLayout>
