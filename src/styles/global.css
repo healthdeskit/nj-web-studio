@@ -18,13 +18,13 @@
 @layer components {
   /* Buttons */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-lg font-semibold text-white bg-primary hover:bg-primary-light transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 shadow-md hover:shadow-lg;
+    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-semibold text-white bg-primary hover:bg-primary-light transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 shadow-[0_8px_24px_rgba(30,58,95,.18)] hover:shadow-[0_12px_30px_rgba(30,58,95,.24)];
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-lg font-semibold text-primary border-2 border-primary hover:bg-primary hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-semibold text-primary border-2 border-primary/80 hover:bg-primary hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
   }
   .btn-accent {
-    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-lg font-semibold text-stone-900 bg-accent hover:bg-accent-muted transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 shadow-md hover:shadow-lg;
+    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-semibold text-stone-900 bg-accent hover:bg-accent-muted transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 shadow-[0_8px_24px_rgba(201,162,39,.22)] hover:shadow-[0_12px_30px_rgba(201,162,39,.28)];
   }
   /* Layout */
   .section-padding { @apply py-16 md:py-24; }
@@ -32,13 +32,18 @@
   .content-wide { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
   /* Cards - border-radius 12px, shadow system */
   .card-premium {
-    @apply bg-white rounded-xl border border-stone-200 shadow-[0_1px_3px_rgba(0,0,0,.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,.10)] hover:-translate-y-0.5 transition-all duration-300;
+    @apply bg-white rounded-2xl border border-stone-200 shadow-[0_1px_2px_rgba(0,0,0,.03),0_12px_30px_rgba(0,0,0,.04)] transition-all duration-300;
+  }
+
+  .card-premium:hover {
+    @apply border-stone-300;
+    transform: translateY(-2px);
   }
   .card-elevated {
-    @apply bg-white rounded-xl shadow-[0_4px_24px_rgba(0,0,0,.06)] border border-stone-100;
+    @apply bg-white rounded-2xl border border-stone-100 shadow-[0_10px_34px_rgba(0,0,0,.06)];
   }
   .card-proof {
-    @apply bg-white rounded-xl p-6 md:p-8 border border-stone-100 shadow-[0_2px_12px_rgba(0,0,0,.04)];
+    @apply bg-white rounded-2xl p-6 md:p-8 border border-stone-100 shadow-[0_6px_24px_rgba(0,0,0,.05)];
   }
   /* Typography */
   .heading-xl {
@@ -71,7 +76,7 @@
   }
   /* CTA band */
   .cta-band {
-    @apply py-12 md:py-16 rounded-2xl;
+    @apply py-14 md:py-18 rounded-[1.75rem] shadow-[0_18px_60px_rgba(15,23,42,.18)];
   }
   /* Form elements */
   .input-field {
@@ -90,7 +95,12 @@
 
   /* Section overline — gold bar + uppercase tracking label */
   .section-overline {
-    @apply flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-[#c9a227] mb-5;
+    @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#1e3a5f] mb-4;
+  }
+
+  .section-overline::before {
+    content: '';
+    @apply inline-block w-8 h-px bg-[#c9a227];
   }
 }
 
@@ -112,13 +122,3 @@
   transform: scaleX(1);
 }
 
-/* Section overline gold bar */
-.section-overline::before {
-  content: '';
-  display: inline-block;
-  width: 1.5rem;
-  height: 2px;
-  background: #c9a227;
-  border-radius: 9999px;
-  flex-shrink: 0;
-}

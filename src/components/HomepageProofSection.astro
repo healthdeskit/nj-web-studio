@@ -1,0 +1,105 @@
+---
+const auditAreas = [
+  {
+    title: 'Homepage clarity',
+    desc: 'We check whether the first screen explains what you do, who you help, and why a serious buyer should keep reading instead of bouncing or comparing you to a stronger competitor.'
+  },
+  {
+    title: 'Service-page strength',
+    desc: 'We review whether your core service pages actually persuade, answer objections, and route visitors toward action-or whether they simply describe services in generic terms.'
+  },
+  {
+    title: 'Trust architecture',
+    desc: 'We look for proof, credibility, fit guidance, process clarity, and reassurance. If trust appears too late or too weakly, conversions usually suffer.'
+  },
+  {
+    title: 'CTA flow',
+    desc: 'We check whether contact paths are obvious, repeated intelligently, and matched to user intent. Weak or buried CTAs are one of the fastest ways to lose leads.'
+  },
+  {
+    title: 'Local SEO alignment',
+    desc: 'We review whether the page structure, internal links, metadata, schema, and local-intent logic support visibility-or whether search and conversion are disconnected.'
+  },
+  {
+    title: 'Mobile buying experience',
+    desc: 'We check whether the site still feels credible, readable, and easy to act on when viewed quickly on mobile, where many first impressions actually happen.'
+  },
+];
+
+const examples = [
+  {
+    before: 'Generic headline, weak proof, buried CTA, and a homepage that feels like every other local provider.',
+    after: 'Sharper positioning, clearer service hierarchy, stronger trust framing, and a more obvious reason to contact the business.',
+    why: 'This improves first-impression trust and gives buyers a clearer path toward inquiry.'
+  },
+  {
+    before: 'Short service pages with broad language and no real explanation of who the offer is for or why it is different.',
+    after: 'Service pages built around outcomes, objections, fit, process, and conversion paths tied to what buyers need before they call.',
+    why: 'This improves both lead quality and how well the website supports SEO traffic.'
+  },
+  {
+    before: 'GBP activity or SEO work that sends people to weak landing pages with little commercial weight.',
+    after: 'Better alignment between local visibility signals and the pages people land on, so search traffic meets a stronger sales experience.',
+    why: 'This reduces wasted traffic and helps rankings work harder for the business.'
+  },
+];
+---
+
+<section class="section-padding bg-white">
+  <div class="content-width">
+    <div class="max-w-3xl mb-14">
+      <p class="section-overline">What the audit actually covers</p>
+      <h2 class="heading-lg mb-5">A Better Homepage Does Not Start With Design Taste Alone</h2>
+      <p class="text-stone-600 text-lg mb-5">
+        The fastest way to waste money on a website project is to jump straight into visuals without understanding what is actually weakening trust and conversions. That is why we start with an audit. The goal is not to overwhelm you with jargon. The goal is to identify the parts of the site that are making the business feel weaker than it should.
+      </p>
+      <p class="text-stone-600 text-lg">
+        We look at the page the way a serious buyer experiences it: what they understand first, what makes them hesitate, what feels unclear, what feels stronger than competitors, and what needs to change before more traffic can translate into better inquiries.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mb-16">
+      {auditAreas.map((item) => (
+        <article class="card-premium p-7">
+          <h3 class="font-semibold text-stone-900 mb-3">{item.title}</h3>
+          <p class="text-stone-600 text-sm">{item.desc}</p>
+        </article>
+      ))}
+    </div>
+
+    <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-start">
+      <div>
+        <p class="section-overline">What improvement looks like</p>
+        <h2 class="heading-lg mb-5">The Kind of Changes We Are Usually Looking For</h2>
+        <p class="text-stone-600 text-lg mb-5">
+          We do not promise magic. We look for concrete improvements that make the site more credible, easier to understand, and more commercially useful. That usually means making trust show up earlier, reducing generic language, clarifying the offer, and giving visitors a more logical path to action.
+        </p>
+        <p class="text-stone-600 text-lg">
+          When this work is done well, the site feels sharper without becoming louder. It becomes easier for the right buyer to say, "This business looks serious. This feels like the stronger option. I should contact them."
+        </p>
+      </div>
+
+      <div class="space-y-5">
+        {examples.map((example) => (
+          <div class="card-elevated p-7">
+            <div class="grid md:grid-cols-2 gap-5 mb-5">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-stone-500 mb-2">Before</p>
+                <p class="text-stone-600 text-sm">{example.before}</p>
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-[#1e3a5f] mb-2">After</p>
+                <p class="text-stone-700 text-sm">{example.after}</p>
+              </div>
+            </div>
+            <div class="pt-4 border-t border-stone-200">
+              <p class="text-sm text-stone-600">
+                <span class="font-semibold text-stone-900">Why it matters:</span> {example.why}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
