@@ -1,0 +1,23 @@
+{
+  "name": "nj-web-studio",
+  "description": "NJ Web Studio – Astro marketing site for web design, local SEO, and trust-heavy niches (dentists, med spas, law firms) in New Jersey.",
+  "repository": {
+    "owner": "healthdeskit",
+    "repo": "nj-web-studio",
+    "branch": "main"
+  },
+  "techStack": ["Astro", "TypeScript", "Tailwind CSS"],
+  "keyPaths": {
+    "components": "src/components/",
+    "pages": "src/pages/",
+    "layouts": "src/layouts/",
+    "styles": "src/styles/",
+    "config": "src/config/",
+    "public": "public/"
+  },
+  "entryPoints": [
+    "src/pages/index.astro",
+    "src/layouts/BaseLayout.astro",
+    "src/config/site.ts"
+  ]
+}
